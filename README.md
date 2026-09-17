@@ -180,3 +180,20 @@ Do proměnných prostředí na hostingu patří:
 | `SUPABASE_SECRET_KEY` | ano | totéž; tajný klíč (`sb_secret_…`), nikdy do kódu |
 | `RESEND_API_KEY` | ne | bez ní se poptávka jen zaloguje |
 | `ADMIN_SECRET` | ne | podpis přihlašovací cookie |
+
+Bez těch proměnných se web postaví a poběží — jen pojede na výchozích textech
+z kódu a administrace bude vypnutá. Nic nespadne.
+
+### Vercel
+
+Root Directory nechte prázdný, aplikace je v kořeni repozitáře. Framework
+si Vercel pozná sám (Next.js), build i start jsou výchozí.
+
+Proměnné nastavte v **Project Settings → Environment Variables** pro všechna
+prostředí (Production, Preview, Development). Přidání proměnné samo o sobě
+nasazení nepřegeneruje — projeví se až při dalším nasazení.
+
+**Nasazení spouští push do `main`.** Když projekt vznikl připojením
+existujícího repozitáře, Vercel commit, který v něm už byl, zpětně nenasadí a
+čeká na první nový push. Dá se to obejít tlačítkem *Redeploy* v záložce
+Deployments, nebo prostě commitnout cokoli dalšího.
