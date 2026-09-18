@@ -91,7 +91,7 @@ export const demoPoptavky: DemoPoptavka[] = [
       a19: { state: "vypadl", why: "SUV, benzin, cena" },
     },
     ranking: [
-      { carId: "a1", verdict: "hodi_se", why: "Kombi s tažným a automatem, nafta, 112 tis. km, pod rozpočtem. Serviska a garážované – přesně to, co rodina popsala." },
+      { carId: "a1", verdict: "hodi_se", why: "Kombi s tažným a automatem, nafta, 112 tis. km, pod rozpočtem. Serviska a garážované, přesně to, co rodina popsala." },
       { carId: "a11", verdict: "hodi_se", why: "Kufr 602 l, tažné, tovární záruka do 2027. Manuál je jen preference, ne podmínka." },
       { carId: "a20", verdict: "hodi_se", why: "Stejná technika jako Octavia, kufr 587 l, tažné, o 54 tisíc levnější. Manuál." },
       { carId: "a3", verdict: "castecne", why: "Splňuje všechno včetně automatu, ale je 19 tisíc nad rozpočtem. Stojí za nabídnutí s poznámkou o ceně." },
@@ -134,14 +134,14 @@ export const demoPoptavky: DemoPoptavka[] = [
       { label: "nesmí mít", value: "po havárii" },
       { label: "kontext", value: "hory, zima, 12 tis. km/rok" },
     ],
-    nejasnosti: ["Převodovka neuvedena – bereme obě."],
+    nejasnosti: ["Převodovka neuvedena, bereme obě."],
     prefilter: {
       a7: { state: "prosel" },
       a19: { state: "tesne", why: "cena 469 000 je o 4 % nad rozpočtem" },
       ...Object.fromEntries(cars.filter((c) => !["a7", "a19"].includes(c.id)).map((c) => [c.id, { state: "vypadl" as Prefilter, why: c.body !== "SUV" ? `karoserie ${c.body}` : "palivo" }])),
     },
     ranking: [
-      { carId: "a7", verdict: "hodi_se", why: "Jediné SUV s pohonem všech kol a benzinem v nabídce. Tažné, vyhřívaná sedadla, levná údržba – na hory ideální." },
+      { carId: "a7", verdict: "hodi_se", why: "Jediné SUV s pohonem všech kol a benzinem v nabídce. Tažné, vyhřívaná sedadla, levná údržba, na hory ideální." },
       { carId: "a19", verdict: "nehodi_se", why: "Cena by ještě prošla, ale inzerát výslovně uvádí pohon předních kol. Bez 4x4 zákazníkovi nepomůže." },
     ],
   },

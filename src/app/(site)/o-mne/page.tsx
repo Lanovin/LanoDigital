@@ -65,19 +65,6 @@ export default async function OMnePage() {
       </section>
 
       <section className="pt-20">
-        <Reveal>
-          <p className="eyebrow">{about.toolsLabel}</p>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {about.tools.map((t) => (
-              <li key={t} className="rounded-full border border-line-strong bg-cream px-3 py-1.5 text-sm font-medium">
-                {t}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </section>
-
-      <section className="pt-20">
         <Reveal className="text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">
             <RichText text={about.ctaTitle} />

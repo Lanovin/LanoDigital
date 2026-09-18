@@ -49,7 +49,7 @@ export function ContactForm({ t }: { t: Content["kontakt"] }) {
           {t.formSuccessText}
           {!status.delivered && (
             <span className="mt-2 block text-xs text-ink-3">
-              (Odesílání e-mailu ještě není nastavené – zpráva se zapsala do logu serveru.)
+              (Odesílání e-mailu ještě není nastavené, zpráva se zapsala do logu serveru.)
             </span>
           )}
         </p>

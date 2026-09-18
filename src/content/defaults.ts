@@ -15,7 +15,7 @@ export const DEFAULT_CONTENT: Content = {
     name: "LanoDigital",
     tagline: "Systémy, které za vás udělají práci.",
     description:
-      "LanoDigital staví AI workflow a webové stránky pro malé firmy a živnostníky. Třídění pošty, čtení faktur, hledání v nabídce – a k tomu weby, které se dobře čtou.",
+      "LanoDigital staví AI workflow a webové stránky pro malé firmy a živnostníky. Třídění pošty, čtení faktur, hledání v nabídce a k tomu weby, které se dobře čtou.",
     url: "https://lanodigital.cz",
     owner: {
       name: "Štěpán Lano",
@@ -37,7 +37,7 @@ export const DEFAULT_CONTENT: Content = {
     heroEyebrow: "AI workflow · webové stránky",
     heroTitle: "Stavíme systémy,\nkteré za vás *udělají práci*.",
     heroLead:
-      "Pošta, faktury, poptávky – věci, které dnes někdo přepisuje ručně. Postavím vám AI systém, který je přečte, zkontroluje a připraví k rozhodnutí. A když potřebujete web, udělám i ten.",
+      "Pošta, faktury, poptávky. Věci, které dnes někdo přepisuje ručně. Postavím vám AI systém, který je přečte, zkontroluje a připraví k rozhodnutí. A když potřebujete web, udělám i ten.",
     heroPrimary: "Vyzkoušet ukázky",
     heroSecondary: "Konzultace zdarma",
     marquee: [
@@ -57,12 +57,12 @@ export const DEFAULT_CONTENT: Content = {
     webyEyebrow: "Webové stránky",
     webyTitle: "Weby a aplikace, *které někdo používá*.",
     webyLead:
-      "Od prezentačního webu po SaaS, který si zákazníci platí. Projeďte si je rovnou tady — Mika Auto se dá spustit naživo přímo v dlaždici.",
+      "Od prezentačního webu po SaaS, který si zákazníci platí. Projeďte si je rovnou tady. Mika Auto se dá spustit naživo přímo v dlaždici.",
     webyMore: "Více o tom, jak weby dělám →",
     flowEyebrow: "Jak to funguje",
     flowTitle: "Vstup, agent, kontrola, výstup. *Bez kouzel.*",
     flowLead:
-      "Každý systém má stejnou kostru. Model dělá to, co umí jen model – čte a rozumí. Kód dělá to, co má dělat kód – počítá, ověřuje a hlídá. A když něco nesedí, systém to řekne, místo aby to schoval.",
+      "Každý systém má stejnou kostru. Model dělá to, co umí jen model: čte a rozumí. Kód dělá to, co má dělat kód: počítá, ověřuje a hlídá. A když něco nesedí, systém to řekne, místo aby to schoval.",
     flowCards: [
       {
         title: "Model čte, kód počítá",
@@ -105,7 +105,7 @@ export const DEFAULT_CONTENT: Content = {
         icon: "bot",
         name: "AI workflow a automatizace",
         tagline: "Systém, který přečte, zkontroluje a připraví k rozhodnutí.",
-        text: "Třídění pošty, přepis faktur a účtenek, hledání v katalogu podle poptávky, příprava podkladů. Postavím agentní workflow na míru vašim datům – s kontrolou v kódu, evalem a reportem, který se dá číst.",
+        text: "Třídění pošty, přepis faktur a účtenek, hledání v katalogu podle poptávky, příprava podkladů. Postavím agentní workflow na míru vašim datům, s kontrolou v kódu, evalem a reportem, který se dá číst.",
         bullets: [
           "Analýza toho, co se dnes dělá ručně",
           "Prototyp na vašich vzorových datech",
@@ -121,7 +121,7 @@ export const DEFAULT_CONTENT: Content = {
         icon: "globe",
         name: "Webové stránky",
         tagline: "Rychlé, čitelné, s kontaktem na dosah palce.",
-        text: "Prezentační weby pro živnostníky a malé firmy. Návrh, texty, nasazení. Bez zbytečností, ale s charakterem – aby web vypadal jako vy, ne jako šablona.",
+        text: "Prezentační weby pro živnostníky a malé firmy. Návrh, texty, nasazení. Bez zbytečností, ale s charakterem, aby web vypadal jako vy, ne jako šablona.",
         bullets: [
           "Návrh struktury a designu",
           "Mobil na prvním místě",
@@ -137,7 +137,7 @@ export const DEFAULT_CONTENT: Content = {
         icon: "chat",
         name: "Konzultace a audit",
         tagline: "Půl hodiny, po které víte, jestli to má smysl.",
-        text: "Projdeme, co ve firmě zabírá čas. Řeknu vám rovnou, co se dá automatizovat, co ne a proč – a kolik by to zhruba stálo. Bez závazků.",
+        text: "Projdeme, co ve firmě zabírá čas. Řeknu vám rovnou, co se dá automatizovat, co ne a proč. A taky kolik by to zhruba stálo. Bez závazků.",
         bullets: [
           "Online nebo osobně",
           "Konkrétní návrh, ne obecné rady",
@@ -198,7 +198,7 @@ export const DEFAULT_CONTENT: Content = {
     flowLabel: "tok dat",
     detailButton: "Detail a ukázka",
     bonusBadge: "04 · bonus",
-    bonusTitle: "Přehled – jeden web nad všemi třemi",
+    bonusTitle: "Přehled: jeden web nad všemi třemi",
     bonusText:
       "Malý server bez frameworku, který čte výsledky všech tří nástrojů z disku, skládá z nich stránky a umí je spustit tlačítkem. Příkazy se nikdy neskládají z požadavku, spouštět jde jen z localhostu a exportuje se do statického HTML na libovolný hosting.",
   },
@@ -226,7 +226,7 @@ export const DEFAULT_CONTENT: Content = {
       name: "Třídění pošty",
       short: "Pošta do kategorií, u každého mailu i důvod.",
       pitch:
-        "Systém přečte schránku, rozhodne, co je potřeba řešit, co je jen informace a co je šum – a ke každému mailu napíše proč. Do schránky nikdy nezapisuje, jen doporučuje.",
+        "Systém přečte schránku, rozhodne, co je potřeba řešit, co je jen informace a co je šum. Ke každému mailu napíše proč. Do schránky nikdy nezapisuje, jen doporučuje.",
       forWhom:
         "Pro kohokoli, komu denně chodí desítky mailů a část z nich je faktura po splatnosti schovaná mezi newslettery. Ráno vidíte pět věcí, které opravdu čekají na odpověď.",
       insights: [
@@ -240,7 +240,7 @@ export const DEFAULT_CONTENT: Content = {
         },
         {
           title: "Měří se přesnost",
-          text: "Třicet ručně označených mailů a matice záměn. Změna promptu buď zvedne číslo, nebo ne – a je to vidět hned, ne za měsíc.",
+          text: "Třicet ručně označených mailů a matice záměn. Změna promptu buď zvedne číslo, nebo ne. A je to vidět hned, ne za měsíc.",
         },
         {
           title: "Nic se neztratí potichu",
@@ -253,7 +253,6 @@ export const DEFAULT_CONTENT: Content = {
         { label: "Kód ověří", who: "kod", note: "párování podle ID, chybějící se hlásí" },
         { label: "Report", who: "vystup", note: "tabulka, HTML, trace každého běhu" },
       ],
-      stack: ["TypeScript", "Claude API", "Zod", "IMAP", "eval sada"],
       outputs: [
         "Tabulka v konzoli",
         "HTML report",
@@ -263,7 +262,7 @@ export const DEFAULT_CONTENT: Content = {
       safety: [
         "Do schránky se nikdy nezapisuje",
         "Heslo aplikace, ne hlavní heslo",
-        "Obsah mailů je nedůvěryhodný vstup – escapuje se",
+        "Obsah mailů je nedůvěryhodný vstup, escapuje se",
       ],
       metricValue: "86,7 %",
       metricLabel: "přesnost na 30 ručně označených mailech",
@@ -273,13 +272,13 @@ export const DEFAULT_CONTENT: Content = {
       name: "Čtení dokladů",
       short: "Faktury a účtenky z fotek a PDF do tabulky pro účetní.",
       pitch:
-        "Do složky nasypete faktury a účtenky – fotky z mobilu, skeny, PDF z mailu. Ven vypadne tabulka pro účetní, kalendář splatností a seznam dokladů, u kterých něco nesedí.",
+        "Do složky nasypete faktury a účtenky: fotky z mobilu, skeny, PDF z mailu. Ven vypadne tabulka pro účetní, kalendář splatností a seznam dokladů, u kterých něco nesedí.",
       forWhom:
         "Pro živnostníky a malé firmy, kde se doklady sbírají v krabici a na konci měsíce je někdo přepisuje ručně. Systém přepíše, spočítá a řekne, co zaplatit a kdy.",
       insights: [
         {
           title: "Model čte, kód počítá",
-          text: "Přečíst číslo z papíru umí model. Ověřit, že 44 200 × 0,21 je 9 282, umí kód – zadarmo, pokaždé stejně a nedá se ukecat. Systém tak pozná, když se spletl.",
+          text: "Přečíst číslo z papíru umí model. Ověřit, že 44 200 × 0,21 je 9 282, umí kód, a to zadarmo, pokaždé stejně a nedá se ukecat. Systém tak pozná, když se spletl.",
         },
         {
           title: "Kontrolní součty IČO, IBAN a čísla účtu",
@@ -287,7 +286,7 @@ export const DEFAULT_CONTENT: Content = {
         },
         {
           title: "Opravný dotaz s pojistkou",
-          text: "Když čísla nesedí, doklad jde modelu ještě jednou se seznamem rozporů. Kód pak porovná, co se změnilo – aby model čísla jen „nedorovnal“.",
+          text: "Když čísla nesedí, doklad jde modelu ještě jednou se seznamem rozporů. Kód pak porovná, co se změnilo, aby model čísla jen „nedorovnal“.",
         },
         {
           title: "Duplicity a CSV, které se opravdu otevře",
@@ -300,7 +299,6 @@ export const DEFAULT_CONTENT: Content = {
         { label: "Kód přepočítá", who: "kod", note: "aritmetika, kontrolní součty, duplicity" },
         { label: "Tabulka + kalendář", who: "vystup", note: "CSV pro účetní, HTML report" },
       ],
-      stack: ["TypeScript", "Claude API (vision)", "Zod", "SHA-256 archiv"],
       outputs: [
         "CSV pro účetní",
         "HTML report s kalendářem splatností",
@@ -309,18 +307,18 @@ export const DEFAULT_CONTENT: Content = {
       ],
       safety: [
         "Nic se nikam neposílá, nic se neplatí",
-        "Doklad je nedůvěryhodný vstup – hlídají se i vzorce v CSV",
+        "Doklad je nedůvěryhodný vstup, hlídají se i vzorce v CSV",
         "Druhý běh na stejných souborech stojí nula",
       ],
       metricValue: "0 Kč",
-      metricLabel: "za druhý běh – hotové doklady se neplatí znovu",
+      metricLabel: "za druhý běh, hotové doklady se neplatí znovu",
     },
     {
       slug: "hledani-inzeratu",
       name: "Hledání v nabídce",
       short: "Auta z inzertního feedu podle toho, co zákazník napsal mailem.",
       pitch:
-        "Přijde mail: „Sháníme kombík pro rodinu, dvě děti a pes, do 400 tisíc, tažné nutnost.“ Systém z něj vytáhne kritéria, projde nabídku a řekne, co se hodí, co jen částečně a co vůbec – u každého auta i proč.",
+        "Přijde mail: „Sháníme kombík pro rodinu, dvě děti a pes, do 400 tisíc, tažné nutnost.“ Systém z něj vytáhne kritéria, projde nabídku a řekne, co se hodí, co jen částečně a co vůbec. U každého auta i proč.",
       forWhom:
         "Pro autobazary a prodejce s katalogem, kterým chodí poptávky volným textem. Místo ručního hledání dostane obchodník předvybraný seznam s odůvodněním.",
       insights: [
@@ -330,11 +328,11 @@ export const DEFAULT_CONTENT: Content = {
         },
         {
           title: "Předfiltr v kódu, měkký na okrajích",
-          text: "Porovnat 419 000 s 400 000 umí kód zadarmo. Auto těsně za hranicí se ale nevyhodí – jde modelu s poznámkou, protože zákazník si ho stejně prohlédne.",
+          text: "Porovnat 419 000 s 400 000 umí kód zadarmo. Auto těsně za hranicí se ale nevyhodí. Jde modelu s poznámkou, protože zákazník si ho stejně prohlédne.",
         },
         {
           title: "Feed je za mapováním, ne v kódu",
-          text: "Nový inzertní feed se rozchodí úpravou jednoho YAML souboru. Kódování, složené názvy, cena s DPH i bez – všechno je popsané, ne zadrátované.",
+          text: "Nový inzertní feed se rozchodí úpravou jednoho YAML souboru. Kódování, složené názvy, cena s DPH i bez. Všechno je popsané, ne zadrátované.",
         },
         {
           title: "„Nic jsem nenašel“ je správná odpověď",
@@ -347,14 +345,13 @@ export const DEFAULT_CONTENT: Content = {
         { label: "Kód předfiltruje", who: "kod", note: "prošel / těsně / vypadl" },
         { label: "AI posoudí + report", who: "vystup", note: "hodí se / částečně / ne, s důvodem" },
       ],
-      stack: ["TypeScript", "Claude API", "Zod", "XML feed", "prompt cache"],
       outputs: [
         "Report s odůvodněním u každého auta",
         "Statistika, co nejčastěji vyřazuje",
         "Přehled v konzoli",
       ],
       safety: [
-        "Nic se neodesílá zákazníkovi – návrh, ne odpověď",
+        "Nic se neodesílá zákazníkovi, je to návrh, ne odpověď",
         "IMAP jen pro čtení",
         "Nejasnosti se vypisují, ne domýšlí",
       ],
@@ -369,7 +366,7 @@ export const DEFAULT_CONTENT: Content = {
       "Weby a aplikace od LanoDigital: Cargent, mikaauto.cz a Lanovín. Rychlé, čitelné na mobilu, s kontaktem na dosah palce.",
     eyebrow: "Webové stránky",
     title: "Weby, které se *čtou*.\nAplikace, které *fungují*.",
-    lead: "Živnostník nebo malá firma potřebuje web, který za pár vteřin řekne, co děláte, kde jste a jak vás oslovit. Někdy je ale potřeba aplikace, která opravdu něco počítá — jako Cargent níž. Náhledy se dají projet, Mika Auto i spustit naživo.",
+    lead: "Živnostník nebo malá firma potřebuje web, který za pár vteřin řekne, co děláte, kde jste a jak vás oslovit. Někdy je ale potřeba aplikace, která opravdu něco počítá, jako Cargent níž. Náhledy se dají projet, Mika Auto i spustit naživo.",
     howEyebrow: "Jak weby dělám",
     howTitle: "Co dostanete a jak to probíhá.",
     how: [
@@ -398,19 +395,18 @@ export const DEFAULT_CONTENT: Content = {
       kind: "SaaS · oceňování ojetých vozů",
       short: "AI agent, který z aktuálních inzerátů spočítá tržní cenu ojetého vozu.",
       description:
-        "Vlastní SaaS, který běží naostro. Zadáte auto, agent prohledá inzertní portály, vybere srovnatelné vozy a vrátí tržní cenu s pásmem — i se seznamem inzerátů, ze kterých vychází. Ocenění má čtyři úrovně od rychlé ceny po znalecký posudek s VIN a regionálním srovnáním. Za tím stojí celá aplikace, ne jen stránka: uživatelské účty, kredit v tokenech a platby kartou přes Stripe.",
+        "Vlastní SaaS, který běží naostro. Zadáte auto, agent prohledá inzertní portály, vybere srovnatelné vozy a vrátí tržní cenu s pásmem i se seznamem inzerátů, ze kterých vychází. Ocenění má čtyři úrovně od rychlé ceny po znalecký posudek s VIN a regionálním srovnáním. Za tím stojí celá aplikace, ne jen stránka: uživatelské účty, kredit v tokenech a platby kartou přes Stripe.",
       highlights: [
-        "Cena z inzerátů, které jsou na trhu právě teď — a odkazy na ně",
+        "Cena z inzerátů, které jsou na trhu právě teď, a odkazy na ně",
         "Čtyři úrovně ocenění: od ceny s pásmem po posudek s VIN a riziky modelu",
         "Rozbor faktorů: stav, výbava, servisní historie i nehodovost zvlášť",
         "Kredit v tokenech, platba kartou přes Stripe, tokeny nevyprší",
         "Nástroje pro autobazary: generátor popisků, monitoring trhu a skaut nabídek",
       ],
-      stack: ["Next.js", "TypeScript", "AI agent", "Stripe", "Vercel"],
       accent: "#2563eb",
       live: false,
       liveNote:
-        "Živý náhled tady nejde: Cargent posílá hlavičku X-Frame-Options, takže se do cizího rámu vložit nedá. U aplikace s přihlášením je to správné nastavení — náhled je proto obrázkový a web se otevře v novém okně.",
+        "Živý náhled tady nejde: Cargent posílá hlavičku X-Frame-Options, takže se do cizího rámu vložit nedá. U aplikace s přihlášením je to správné nastavení. Náhled je proto obrázkový a web se otevře v novém okně.",
     },
     {
       slug: "mikaauto",
@@ -428,7 +424,6 @@ export const DEFAULT_CONTENT: Content = {
         "Kontakt, otevírací doba a mapa bez hledání",
         "Nasazeno na Vercelu, rychlé načtení",
       ],
-      stack: ["Next.js", "React", "CSS"],
       accent: "#2d5d8f",
       live: true,
       liveNote: "",
@@ -441,14 +436,13 @@ export const DEFAULT_CONTENT: Content = {
       kind: "Osobní projekt · vinařství",
       short: "Prezentace rodinného vinařství s nabídkou vín a příběhem.",
       description:
-        "Osobní projekt: web pro rodinné vinařství z jižní Moravy. Důraz na atmosféru – fotografie z vinice, klidná patková typografie a jednoduchá nabídka vín. Ukázka toho, že i malý web na levném hostingu může mít charakter.",
+        "Osobní projekt: web pro rodinné vinařství z jižní Moravy. Důraz na atmosféru: fotografie z vinice, klidná patková typografie a jednoduchá nabídka vín. Ukázka toho, že i malý web na levném hostingu může mít charakter.",
       highlights: [
         "Atmosférický design postavený na fotografiích",
         "Nabídka vín, galerie a ubytování",
         "Příběh vinařství místo obecných frází",
         "Nasazení na bezplatném hostingu",
       ],
-      stack: ["HTML", "CSS", "PHP hosting"],
       accent: "#8a2810",
       live: false,
       liveNote:
@@ -462,7 +456,7 @@ export const DEFAULT_CONTENT: Content = {
       "Štěpán Lano, 18 let. Stavím AI workflow od základů a weby, které se čtou. Kdo jsem, jak pracuju a čemu věřím.",
     eyebrow: "O mně",
     title: "Jsem Štěpán Lano. Je mi 18 a stavím systémy, které *jdou vyzkoušet*.",
-    lead: "LanoDigital je moje agentura na AI workflow a webové stránky. Vznikla z osobních projektů: chtěl jsem pochopit, jak se agentní systémy staví od základů, bez frameworků, a jak se pozná, že fungují. Ty projekty jsou teď na tomhle webu – a stejný přístup nabízím vám.",
+    lead: "LanoDigital je moje agentura na AI workflow a webové stránky. Vznikla z osobních projektů: chtěl jsem pochopit, jak se agentní systémy staví od základů, bez frameworků, a jak se pozná, že fungují. Ty projekty jsou teď na tomhle webu a stejný přístup nabízím vám.",
     profileInitials: "ŠL",
     profileStats: [
       { label: "věk", value: "18" },
@@ -475,7 +469,7 @@ export const DEFAULT_CONTENT: Content = {
       {
         period: "Začátek",
         title: "Weby pro známé",
-        text: "První weby jsem dělal pro lidi kolem sebe – autoservis, rodinné vinařství. Naučil jsem se, že web musí hlavně fungovat na mobilu a mít kontakt hned nahoře.",
+        text: "První weby jsem dělal pro lidi kolem sebe, pro autoservis a rodinné vinařství. Naučil jsem se, že web musí hlavně fungovat na mobilu a mít kontakt hned nahoře.",
       },
       {
         period: "Pak",
@@ -508,19 +502,6 @@ export const DEFAULT_CONTENT: Content = {
         text: "Doklady a maily jsou citlivé. Systémy jen čtou, nic neposílají, a klíče k API nikdy nekončí na internetu.",
       },
     ],
-    toolsLabel: "S čím pracuju",
-    tools: [
-      "TypeScript",
-      "Next.js",
-      "React",
-      "Tailwind",
-      "Node.js",
-      "Claude API",
-      "Zod",
-      "IMAP",
-      "HTML / CSS",
-      "PHP hosting",
-    ],
     ctaTitle: "Pojďme se potkat.",
     ctaText: "Půl hodiny online nebo osobně. Přineste, co vás štve, já přinesu návrh, jak to vyřešit.",
     ctaButton: "Domluvit konzultaci",
@@ -532,12 +513,12 @@ export const DEFAULT_CONTENT: Content = {
       "Domluvte si konzultaci zdarma. Napište, co se u vás dělá ručně, a do dvou pracovních dnů se ozvu s návrhem termínu.",
     eyebrow: "Kontakt · konzultace zdarma",
     title: "Napište, co vás *zdržuje*.",
-    lead: "Stačí pár vět. Do dvou pracovních dnů se ozvu s návrhem termínu na půlhodinovou schůzku – online nebo osobně.",
+    lead: "Stačí pár vět. Do dvou pracovních dnů se ozvu s návrhem termínu na půlhodinovou schůzku, online nebo osobně.",
     info: [
       {
         icon: "calendar",
         title: "Co se stane po odeslání",
-        text: "Přečtu si to, připravím pár otázek a pošlu 2–3 termíny.",
+        text: "Přečtu si to, připravím pár otázek a pošlu dva nebo tři termíny.",
       },
       { icon: "clock", title: "Jak dlouho to trvá", text: "Schůzka 30 minut. Návrh řešení do týdne od schůzky." },
       { icon: "mail", title: "Radši e-mail?", text: "" },
@@ -564,6 +545,5 @@ export const DEFAULT_CONTENT: Content = {
     text: "Malá agentura na AI workflow a webové stránky. Stavím věci, které jsou vidět a dají se vyzkoušet, ne prezentace o tom, co by šlo.",
     navLabel: "Navigace",
     contactLabel: "Kontakt",
-    builtWith: "Next.js · TypeScript · Tailwind",
   },
 };

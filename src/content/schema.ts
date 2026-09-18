@@ -44,7 +44,6 @@ export type SystemContent = {
   forWhom: string;
   insights: TitleText[];
   steps: SystemStep[];
-  stack: string[];
   outputs: string[];
   safety: string[];
   metricValue: string;
@@ -61,7 +60,6 @@ export type WebRef = {
   short: string;
   description: string;
   highlights: string[];
-  stack: string[];
   accent: string;
   live: boolean;
   liveNote: string;
@@ -192,8 +190,6 @@ export type Content = {
     beliefsEyebrow: string;
     beliefsTitle: string;
     beliefs: TitleText[];
-    toolsLabel: string;
-    tools: string[];
     ctaTitle: string;
     ctaText: string;
     ctaButton: string;
@@ -226,6 +222,5 @@ export type Content = {
     text: string;
     navLabel: string;
     contactLabel: string;
-    builtWith: string;
   };
 };

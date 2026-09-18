@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(site.url),
     title: {
-      default: `${site.name} – ${site.tagline}`,
+      default: `${site.name} · ${site.tagline}`,
       template: `%s · ${site.name}`,
     },
     description: site.description,
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "cs_CZ",
       siteName: site.name,
-      title: `${site.name} – ${site.tagline}`,
+      title: `${site.name} · ${site.tagline}`,
       description: site.description,
     },
     twitter: { card: "summary_large_image" },

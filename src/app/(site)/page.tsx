@@ -110,13 +110,6 @@ export default async function HomePage() {
                 <p className="eyebrow">{w.kind}</p>
                 <h3 className="mt-1 text-2xl font-bold">{w.name}</h3>
                 <p className="mt-1.5 text-ink-2">{w.short}</p>
-                <ul className="mt-3 flex flex-wrap gap-1.5">
-                  {w.stack.map((s) => (
-                    <li key={s} className="mono-tag">
-                      {s}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </Reveal>
           ))}

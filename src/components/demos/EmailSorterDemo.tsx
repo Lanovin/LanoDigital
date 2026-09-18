@@ -115,7 +115,7 @@ export function EmailSorterDemo() {
               ))}
             </AnimatePresence>
             {pending.length === 0 && (
-              <li className="px-3 py-10 text-center text-sm text-ink-3">Schránka je prázdná – všechno je roztříděné.</li>
+              <li className="px-3 py-10 text-center text-sm text-ink-3">Schránka je prázdná, všechno je roztříděné.</li>
             )}
           </ul>
         </div>

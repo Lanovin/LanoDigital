@@ -125,9 +125,9 @@ export function InvoiceReaderDemo() {
                       >
                         <td className="px-4 py-2 font-mono text-xs sm:px-5">{d.file}</td>
                         <td className="px-3 py-2"><span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${s.cls}`}>{s.label}</span></td>
-                        <td className="px-3 py-2">{d.result.dodavatel}<span className="block font-mono text-[10px] text-ink-3">{d.result.typ} · {d.result.cislo ?? "—"}</span></td>
-                        <td className="px-3 py-2 font-mono text-xs">{d.result.splatnost ?? "—"}</td>
-                        <td className="px-3 py-2 text-right font-mono text-xs">{d.result.sDph !== null ? `${czk(d.result.sDph)} ${d.result.mena === "EUR" ? "€" : "Kč"}` : "—"}</td>
+                        <td className="px-3 py-2">{d.result.dodavatel}<span className="block font-mono text-[10px] text-ink-3">{d.result.cislo ? `${d.result.typ} · ${d.result.cislo}` : d.result.typ}</span></td>
+                        <td className="px-3 py-2 font-mono text-xs">{d.result.splatnost ?? "neuvedena"}</td>
+                        <td className="px-3 py-2 text-right font-mono text-xs">{d.result.sDph !== null ? `${czk(d.result.sDph)} ${d.result.mena === "EUR" ? "€" : "Kč"}` : "bez ceny"}</td>
                       </motion.tr>
                     );
                   })}
@@ -150,7 +150,7 @@ export function InvoiceReaderDemo() {
         </motion.div>
       )}
       {phase === "idle" && (
-        <p className="border-t border-line px-4 py-3 text-xs text-ink-3 sm:px-5">Klikněte na <strong className="text-ink">Přečíst doklady</strong>. Model přepíše, kód přepočítá – a u jednoho dokladu je schválně chyba.</p>
+        <p className="border-t border-line px-4 py-3 text-xs text-ink-3 sm:px-5">Klikněte na <strong className="text-ink">Přečíst doklady</strong>. Model přepíše, kód přepočítá. U jednoho dokladu je schválně chyba.</p>
       )}
     </div>
   );
@@ -215,10 +215,10 @@ function Detail({ doc }: { doc: DemoDoklad }) {
           <p className="font-mono text-[11px] text-cream/60">{doc.file} · jistota {Math.round(r.jistota * 100)} %</p>
           <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
             <dt className="text-cream/60">dodavatel</dt><dd>{r.dodavatel}</dd>
-            <dt className="text-cream/60">IČO</dt><dd className="font-mono">{r.ico ?? "—"}</dd>
-            <dt className="text-cream/60">základ</dt><dd className="font-mono">{r.bezDph !== null ? czk(r.bezDph) : "—"}</dd>
-            <dt className="text-cream/60">DPH</dt><dd className="font-mono">{r.dph !== null ? czk(r.dph) : "—"}</dd>
-            <dt className="text-cream/60">celkem</dt><dd className="font-mono">{r.sDph !== null ? czk(r.sDph) : "—"} {r.mena}</dd>
+            <dt className="text-cream/60">IČO</dt><dd className="font-mono">{r.ico ?? "neuvedeno"}</dd>
+            <dt className="text-cream/60">základ</dt><dd className="font-mono">{r.bezDph !== null ? czk(r.bezDph) : "neuvedeno"}</dd>
+            <dt className="text-cream/60">DPH</dt><dd className="font-mono">{r.dph !== null ? czk(r.dph) : "neuvedeno"}</dd>
+            <dt className="text-cream/60">celkem</dt><dd className="font-mono">{r.sDph !== null ? `${czk(r.sDph)} ${r.mena}` : "neuvedeno"}</dd>
           </dl>
           {r.nalezy.length > 0 && (
             <ul className="mt-3 space-y-1.5">
@@ -229,7 +229,7 @@ function Detail({ doc }: { doc: DemoDoklad }) {
           )}
         </div>
         <div>
-          <p className="font-mono text-[11px] text-cream/60">kontroly v kódu – zadarmo, pokaždé stejně</p>
+          <p className="font-mono text-[11px] text-cream/60">kontroly v kódu, zadarmo a pokaždé stejně</p>
           <ul className="mt-2 space-y-1.5">
             {r.checks.map((c) => (
               <li key={c.label} className="flex items-center gap-2 text-sm">

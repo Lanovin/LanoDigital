@@ -41,9 +41,9 @@ export async function POST(req: Request) {
   const text = [
     `Jméno: ${d.jmeno}`,
     `E-mail: ${d.email}`,
-    `Firma: ${d.firma || "—"}`,
+    `Firma: ${d.firma || "neuvedeno"}`,
     `Zájem: ${ZAJEM[d.zajem]}`,
-    `Termín: ${d.termin || "—"}`,
+    `Termín: ${d.termin || "neuvedeno"}`,
     "",
     d.zprava,
   ].join("\n");
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
   const from = process.env.CONTACT_FROM ?? "LanoDigital <onboarding@resend.dev>";
 
   if (!apiKey) {
-    console.log("[kontakt] (bez RESEND_API_KEY – jen log)\n" + text);
+    console.log("[kontakt] (bez RESEND_API_KEY, jen log)\n" + text);
     return NextResponse.json({ ok: true, delivered: false });
   }
 

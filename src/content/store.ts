@@ -221,7 +221,7 @@ export async function checkStorage(): Promise<Diagnostika> {
       driver: "supabase",
       ok: false,
       detail: chybiTabulka
-        ? `Připojeno, ale chybí tabulka „${TABLE}“ — pusťte supabase/schema.sql v SQL editoru.`
+        ? `Připojeno, ale chybí tabulka „${TABLE}“. Pusťte supabase/schema.sql v SQL editoru.`
         : error.message,
       ulozeno: false,
       zmeneno: null,

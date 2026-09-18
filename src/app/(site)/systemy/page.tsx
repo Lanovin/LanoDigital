@@ -39,17 +39,10 @@ export default async function SystemyPage() {
                 <h2 className="mt-4 text-3xl font-bold">{s.name}</h2>
                 <p className="mt-2 text-ink-2">{s.pitch}</p>
                 <p className="mt-3 text-sm text-ink-3">{s.forWhom}</p>
-                <div className="mt-5 flex flex-wrap gap-3">
+                <div className="mt-5">
                   <Link href={`/systemy/${s.slug}`} className="btn btn-ink !px-4 !py-2.5 text-sm">
                     {systemyPage.detailButton} <ArrowUpRight className="size-4" />
                   </Link>
-                  <ul className="flex flex-wrap items-center gap-1.5">
-                    {s.stack.map((t) => (
-                      <li key={t} className="mono-tag">
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
               <div className="rounded-2xl border border-line bg-white/50 p-4">

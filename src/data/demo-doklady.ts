@@ -51,7 +51,7 @@ export const demoDoklady: DemoDoklad[] = [
       checks: [
         { label: "základ + DPH = celkem", ok: true },
         { label: "sazba 21 % × základ", ok: true },
-        { label: "IČO 26349175 – kontrolní součet", ok: true },
+        { label: "kontrolní součet IČO 26349175", ok: true },
         { label: "IBAN odpovídá číslu účtu", ok: true },
       ],
     },
@@ -74,11 +74,11 @@ export const demoDoklady: DemoDoklad[] = [
       dph: 9828,
       sDph: 54028,
       jistota: 0.95,
-      nalezy: ["Sazba 21 % ze základu 44 200,00 je 9 282,00, na dokladu je daň 9 828,00.", "Druhé čtení nepomohlo – chyba je na papíře, ne v přepisu."],
+      nalezy: ["Sazba 21 % ze základu 44 200,00 je 9 282,00, na dokladu je daň 9 828,00.", "Druhé čtení nepomohlo, chyba je na papíře, ne v přepisu."],
       checks: [
         { label: "základ + DPH = celkem", ok: true },
         { label: "sazba 21 % × základ", ok: false },
-        { label: "IČO 28571347 – kontrolní součet", ok: true },
+        { label: "kontrolní součet IČO 28571347", ok: true },
       ],
     },
   },
@@ -104,7 +104,7 @@ export const demoDoklady: DemoDoklad[] = [
       checks: [
         { label: "rekapitulace 12 % + 21 %", ok: true },
         { label: "součet položek = základ", ok: true },
-        { label: "IČO 47182059 – kontrolní součet", ok: true },
+        { label: "kontrolní součet IČO 47182059", ok: true },
       ],
     },
   },
@@ -153,8 +153,8 @@ export const demoDoklady: DemoDoklad[] = [
       jistota: 0.95,
       nalezy: [],
       checks: [
-        { label: "reverse charge – DPH 0", ok: true },
-        { label: "IBAN DE10… – modulo 97", ok: true },
+        { label: "reverse charge, DPH 0", ok: true },
+        { label: "IBAN DE10… podle modulo 97", ok: true },
       ],
     },
   },
@@ -178,8 +178,8 @@ export const demoDoklady: DemoDoklad[] = [
       jistota: 0.82,
       nalezy: [],
       checks: [
-        { label: "ceny s DPH – zpětný přepočet", ok: true },
-        { label: "IČO 11946270 – kontrolní součet", ok: true },
+        { label: "ceny s DPH, zpětný přepočet", ok: true },
+        { label: "kontrolní součet IČO 11946270", ok: true },
       ],
     },
   },
@@ -188,7 +188,7 @@ export const demoDoklady: DemoDoklad[] = [
     file: "dodaci-list.pdf",
     kind: "pdf",
     label: "Dodací list (není doklad)",
-    glance: { supplier: "Stavebniny Hrubý s.r.o.", total: "—" },
+    glance: { supplier: "Stavebniny Hrubý s.r.o.", total: "bez cen" },
     result: {
       stav: "ok",
       typ: "jine",
@@ -202,7 +202,7 @@ export const demoDoklady: DemoDoklad[] = [
       sDph: null,
       jistota: 0.96,
       nalezy: [],
-      checks: [{ label: "bez cen – nic se nedopočítává", ok: true }],
+      checks: [{ label: "bez cen, nic se nedopočítává", ok: true }],
     },
   },
 ];

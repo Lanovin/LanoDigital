@@ -17,7 +17,7 @@ const DEMO = {
 
 const WHO = {
   vstup: { cls: "bg-paper text-ink", label: "vstup" },
-  model: { cls: "bg-rust text-cream", label: "Claude" },
+  model: { cls: "bg-rust text-cream", label: "AI model" },
   kod: { cls: "bg-moss text-cream", label: "kód" },
   vystup: { cls: "bg-sky text-cream", label: "výstup" },
 } as const;
@@ -131,13 +131,6 @@ export default async function SystemDetailPage({ params }: { params: Promise<Par
                 ))}
               </ul>
             </div>
-            <ul className="flex flex-wrap gap-1.5">
-              {s.stack.map((t) => (
-                <li key={t} className="mono-tag">
-                  {t}
-                </li>
-              ))}
-            </ul>
           </div>
         </Reveal>
         <div>

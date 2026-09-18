@@ -159,7 +159,7 @@ export function CarFinderDemo() {
             {(phase === "prefilter" || phase === "ranking" || phase === "done") && (
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
                 <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3">
-                  <Filter className="size-3.5" /> 2 · předfiltr v kódu – zadarmo
+                  <Filter className="size-3.5" /> 2 · předfiltr v kódu zadarmo
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {cars.map((c, i) => {
@@ -167,7 +167,7 @@ export function CarFinderDemo() {
                     return (
                       <motion.span
                         key={c.id}
-                        title={`${c.name} – ${PRE[st].label}${poptavka.prefilter[c.id]?.why ? ": " + poptavka.prefilter[c.id]?.why : ""}`}
+                        title={`${c.name}: ${PRE[st].label}${poptavka.prefilter[c.id]?.why ? ": " + poptavka.prefilter[c.id]?.why : ""}`}
                         initial={{ scale: 0.4, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: i * 0.05, type: "spring", stiffness: 400, damping: 22 }}
@@ -191,7 +191,7 @@ export function CarFinderDemo() {
             {(phase === "ranking" || phase === "done") && (
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="mt-5">
                 <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3">
-                  <Bot className="size-3.5" /> 3 · posouzení – s důvodem
+                  <Bot className="size-3.5" /> 3 · posouzení s důvodem
                 </p>
                 {poptavka.ranking.length === 0 ? (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2 rounded-2xl bg-ink p-4 text-cream">

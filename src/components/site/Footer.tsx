@@ -40,11 +40,10 @@ export function Footer({ site, footer }: { site: Content["site"]; footer: Conten
               </ul>
             </div>
           </div>
-          <div className="mt-10 flex flex-col gap-2 border-t border-cream/15 pt-6 text-sm text-cream/55 sm:flex-row sm:justify-between">
+          <div className="mt-10 border-t border-cream/15 pt-6 text-sm text-cream/55">
             <span>
               © {year} {site.name}
             </span>
-            <span className="font-mono text-xs">{footer.builtWith}</span>
           </div>
         </div>
       </div>

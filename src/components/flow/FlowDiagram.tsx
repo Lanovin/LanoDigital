@@ -37,7 +37,7 @@ const EDGES: Edge[] = [
 
 const KIND_STYLE: Record<NodeKind, { box: string; icon: string; tag: string }> = {
   trigger: { box: "bg-cream border-line-strong", icon: "bg-paper text-ink", tag: "spouštěč" },
-  model: { box: "bg-ink text-cream border-ink", icon: "bg-rust text-cream", tag: "Claude" },
+  model: { box: "bg-ink text-cream border-ink", icon: "bg-rust text-cream", tag: "AI model" },
   code: { box: "bg-cream border-line-strong", icon: "bg-moss text-cream", tag: "čistý kód" },
   output: { box: "bg-cream border-line-strong", icon: "bg-sky text-cream", tag: "výstup" },
 };

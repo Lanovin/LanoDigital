@@ -29,7 +29,7 @@ export function Nav({ name, nav, cta }: { name: string; nav: NavItem[]; cta: Nav
         }`}
       >
         <div className="container-x flex h-16 items-center justify-between gap-6">
-          <Link href="/" onClick={close} className="text-[1.45rem] leading-none" aria-label={`${name} – domů`}>
+          <Link href="/" onClick={close} className="text-[1.45rem] leading-none" aria-label={`${name}, domů`}>
             <Wordmark name={name} />
           </Link>
 
