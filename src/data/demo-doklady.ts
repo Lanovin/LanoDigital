@@ -50,8 +50,8 @@ export const demoDoklady: DemoDoklad[] = [
       nalezy: [],
       checks: [
         { label: "základ + DPH = celkem", ok: true },
-        { label: "sazba 21 % × základ", ok: true },
-        { label: "kontrolní součet IČO 26349175", ok: true },
+        { label: "DPH 21 % ze základu", ok: true },
+        { label: "IČO 26349175 je platné", ok: true },
         { label: "IBAN odpovídá číslu účtu", ok: true },
       ],
     },
@@ -77,8 +77,8 @@ export const demoDoklady: DemoDoklad[] = [
       nalezy: ["Sazba 21 % ze základu 44 200,00 je 9 282,00, na dokladu je daň 9 828,00.", "Druhé čtení nepomohlo, chyba je na papíře, ne v přepisu."],
       checks: [
         { label: "základ + DPH = celkem", ok: true },
-        { label: "sazba 21 % × základ", ok: false },
-        { label: "kontrolní součet IČO 28571347", ok: true },
+        { label: "DPH 21 % ze základu", ok: false },
+        { label: "IČO 28571347 je platné", ok: true },
       ],
     },
   },
@@ -104,7 +104,7 @@ export const demoDoklady: DemoDoklad[] = [
       checks: [
         { label: "rekapitulace 12 % + 21 %", ok: true },
         { label: "součet položek = základ", ok: true },
-        { label: "kontrolní součet IČO 47182059", ok: true },
+        { label: "IČO 47182059 je platné", ok: true },
       ],
     },
   },
@@ -129,7 +129,7 @@ export const demoDoklady: DemoDoklad[] = [
       nalezy: ["Stejné číslo dokladu od stejného dodavatele už je ve faktura-webhosting.pdf. Do součtu se nepočítá."],
       checks: [
         { label: "základ + DPH = celkem", ok: true },
-        { label: "dodavatel + číslo dokladu unikátní", ok: false },
+        { label: "faktura je tu poprvé", ok: false },
       ],
     },
   },
@@ -154,7 +154,7 @@ export const demoDoklady: DemoDoklad[] = [
       nalezy: [],
       checks: [
         { label: "reverse charge, DPH 0", ok: true },
-        { label: "IBAN DE10… podle modulo 97", ok: true },
+        { label: "německý účet DE10… je platný", ok: true },
       ],
     },
   },
@@ -178,8 +178,8 @@ export const demoDoklady: DemoDoklad[] = [
       jistota: 0.82,
       nalezy: [],
       checks: [
-        { label: "ceny s DPH, zpětný přepočet", ok: true },
-        { label: "kontrolní součet IČO 11946270", ok: true },
+        { label: "ceny s DPH, přepočet zpět sedí", ok: true },
+        { label: "IČO 11946270 je platné", ok: true },
       ],
     },
   },

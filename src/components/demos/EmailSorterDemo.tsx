@@ -65,7 +65,7 @@ export function EmailSorterDemo() {
             <i className="size-2.5 rounded-full bg-paper-deep" />
             <i className="size-2.5 rounded-full bg-moss/70" />
           </span>
-          <span className="font-mono text-xs text-ink-3">trideni_mailu · ukázková schránka · 12 mailů</span>
+          <span className="font-mono text-xs text-ink-3">Třídění pošty · ukázková schránka · 12 mailů</span>
         </div>
         <div className="flex items-center gap-2">
           {phase === "idle" && (
@@ -75,7 +75,7 @@ export function EmailSorterDemo() {
           )}
           {phase === "running" && (
             <span className="inline-flex items-center gap-2 font-mono text-xs text-rust-deep">
-              <Sparkles className="size-4 animate-blink" /> model třídí… {doneIds.length}/{demoEmails.length}
+              <Sparkles className="size-4 animate-blink" /> AI třídí… {doneIds.length}/{demoEmails.length}
             </span>
           )}
           {phase === "done" && (
@@ -228,7 +228,7 @@ function Summary() {
       <span>
         <b>{count("k_precteni") + count("nepodstatne")}</b> na později nebo smazat
       </span>
-      <span className="ml-auto text-ink-3">2 volání · dávky po 10 · schéma vynucené přes API</span>
+      <span className="ml-auto text-ink-3">ve schránce se nic nezměnilo, je to jen doporučení</span>
     </motion.div>
   );
 }

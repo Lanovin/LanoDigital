@@ -45,6 +45,8 @@ export type SystemContent = {
   insights: TitleText[];
   steps: SystemStep[];
   outputs: string[];
+  /** Co systém neumí nebo schválně nedělá. */
+  limits: string[];
   safety: string[];
   metricValue: string;
   metricLabel: string;
@@ -121,6 +123,14 @@ export type Content = {
       href: string;
       cta: string;
     }[];
+    /** Sekce „co jde a co ne“: co se automatizovat dá a co ne. */
+    scopeEyebrow: string;
+    scopeTitle: string;
+    scopeLead: string;
+    scopeCanLabel: string;
+    scopeCan: string[];
+    scopeCannotLabel: string;
+    scopeCannot: string[];
     processEyebrow: string;
     processTitle: string;
     process: { number: string; title: string; text: string }[];
@@ -140,6 +150,7 @@ export type Content = {
     bonusBadge: string;
     bonusTitle: string;
     bonusText: string;
+    bonusButton: string;
   };
 
   systemDetail: {
@@ -151,6 +162,7 @@ export type Content = {
     demoLead: string;
     forWhomLabel: string;
     outputsLabel: string;
+    limitsLabel: string;
     safetyLabel: string;
     insightsLabel: string;
     ctaEyebrow: string;

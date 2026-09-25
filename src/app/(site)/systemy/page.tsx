@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Mail, FileText, Search, LayoutDashboard } from "lucide-react";
+import { ArrowUpRight, Mail, FileText, Search, MessageSquare } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/site/Section";
 import { getContent } from "@/content/store";
 
@@ -76,12 +76,17 @@ export default async function SystemyPage() {
         <Reveal as="article" className="rounded-[var(--radius-blob)] border border-dashed border-line-strong p-6 sm:p-8">
           <div className="flex items-center gap-3">
             <span className="inline-flex size-11 items-center justify-center rounded-xl border border-line-strong bg-cream text-ink">
-              <LayoutDashboard className="size-5" />
+              <MessageSquare className="size-5" />
             </span>
             <span className="font-mono text-xs text-ink-3">{systemyPage.bonusBadge}</span>
           </div>
           <h2 className="mt-4 text-2xl font-bold">{systemyPage.bonusTitle}</h2>
           <p className="mt-2 max-w-2xl text-ink-2">{systemyPage.bonusText}</p>
+          {systemyPage.bonusButton && (
+            <Link href="/kontakt" className="btn btn-rust mt-5 !px-4 !py-2.5 text-sm">
+              {systemyPage.bonusButton} <ArrowUpRight className="size-4" />
+            </Link>
+          )}
         </Reveal>
       </div>
     </div>

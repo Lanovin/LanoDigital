@@ -71,7 +71,7 @@ export function InvoiceReaderDemo() {
   return (
     <div className="card overflow-hidden">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-cream-2/70 px-4 py-3 sm:px-5">
-        <span className="font-mono text-xs text-ink-3">cteni_dokladu · složka vstup/ · 7 souborů</span>
+        <span className="font-mono text-xs text-ink-3">Čtení dokladů · ukázková složka · 7 souborů</span>
         {phase === "idle" && (
           <button type="button" onClick={run} className="btn btn-ink !py-2.5 !px-4 text-sm">
             <Play className="size-4" /> Přečíst doklady
@@ -79,7 +79,7 @@ export function InvoiceReaderDemo() {
         )}
         {phase === "running" && (
           <span className="inline-flex items-center gap-2 font-mono text-xs text-rust-deep">
-            <ScanLine className="size-4 animate-blink" /> čtení {doneDocs.length}/{demoDoklady.length} · souběžnost 3
+            <ScanLine className="size-4 animate-blink" /> čtu doklady {doneDocs.length}/{demoDoklady.length}
           </span>
         )}
         {phase === "done" && (
@@ -145,12 +145,12 @@ export function InvoiceReaderDemo() {
       {phase === "done" && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid gap-3 border-t border-line bg-cream-2/70 p-4 sm:grid-cols-3 sm:p-5">
           <Stat label="K zaplacení (bez duplicity)" value={`${czk(toPayCzk)} Kč`} sub={toPayEur ? `+ ${czk(toPayEur)} €` : undefined} />
-          <Stat label="Doklady, kde něco nesedí" value={String(problems)} sub="model přečetl správně, chyba je na papíře" tone="rust" />
-          <Stat label="Druhý běh na stejné složce" value="0 volání" sub="hotové doklady se berou z archivu" />
+          <Stat label="Doklady, kde něco nesedí" value={String(problems)} sub="AI přečetla správně, chyba je přímo na dokladu" tone="rust" />
+          <Stat label="Stejné doklady podruhé" value="0 Kč" sub="už přečtené doklady se znovu neplatí" />
         </motion.div>
       )}
       {phase === "idle" && (
-        <p className="border-t border-line px-4 py-3 text-xs text-ink-3 sm:px-5">Klikněte na <strong className="text-ink">Přečíst doklady</strong>. Model přepíše, kód přepočítá. U jednoho dokladu je schválně chyba.</p>
+        <p className="border-t border-line px-4 py-3 text-xs text-ink-3 sm:px-5">Klikněte na <strong className="text-ink">Přečíst doklady</strong>. AI přepíše, výpočet zkontroluje. U jednoho dokladu je schválně chyba.</p>
       )}
     </div>
   );
@@ -170,7 +170,6 @@ function DocCard({ doc, step, idle, onClick, selected }: { doc: DemoDoklad; step
       <div className="flex items-center gap-1.5">
         <Icon className="size-3.5 text-ink-3" />
         <span className="mono-tag !border-0 !px-0 !text-[9px] uppercase text-ink-3">{doc.kind}</span>
-        {doc.kind === "jpg" && <span className="ml-auto font-mono text-[9px] text-ink-3">1500×2000</span>}
       </div>
       {/* mini „papír“ */}
       <div className="mt-2 rounded-md border border-line bg-cream px-2 py-1.5">
@@ -197,9 +196,9 @@ function DocCard({ doc, step, idle, onClick, selected }: { doc: DemoDoklad; step
       <div className="mt-1 h-4 font-mono text-[10px]">
         {idle && <span className="text-ink-3">čeká</span>}
         {!idle && step === "waiting" && <span className="text-ink-3">ve frontě</span>}
-        {step === "reading" && <span className="text-rust-deep">model čte…</span>}
-        {step === "checking" && <span className="inline-flex items-center gap-1 text-moss"><Calculator className="size-3" /> kód počítá…</span>}
-        {step === "retry" && <span className="inline-flex items-center gap-1 text-rust-deep"><RefreshCw className="size-3 animate-spin" /> opravný dotaz</span>}
+        {step === "reading" && <span className="text-rust-deep">AI čte…</span>}
+        {step === "checking" && <span className="inline-flex items-center gap-1 text-moss"><Calculator className="size-3" /> přepočítávám…</span>}
+        {step === "retry" && <span className="inline-flex items-center gap-1 text-rust-deep"><RefreshCw className="size-3 animate-spin" /> čtu znovu</span>}
         {step === "done" && <span className={`rounded-full px-1.5 py-[1px] text-[9px] font-semibold ${st.cls}`}>{st.label}</span>}
       </div>
     </button>
@@ -229,7 +228,7 @@ function Detail({ doc }: { doc: DemoDoklad }) {
           )}
         </div>
         <div>
-          <p className="font-mono text-[11px] text-cream/60">kontroly v kódu, zadarmo a pokaždé stejně</p>
+          <p className="font-mono text-[11px] text-cream/60">kontroly výpočtem, pokaždé stejně</p>
           <ul className="mt-2 space-y-1.5">
             {r.checks.map((c) => (
               <li key={c.label} className="flex items-center gap-2 text-sm">

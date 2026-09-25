@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, ShieldCheck, Package } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ShieldCheck, Package, CircleSlash } from "lucide-react";
 import { Reveal, RichText, SectionHeading } from "@/components/site/Section";
 import { EmailSorterDemo } from "@/components/demos/EmailSorterDemo";
 import { InvoiceReaderDemo } from "@/components/demos/InvoiceReaderDemo";
@@ -17,9 +17,9 @@ const DEMO = {
 
 const WHO = {
   vstup: { cls: "bg-paper text-ink", label: "vstup" },
-  model: { cls: "bg-rust text-cream", label: "AI model" },
-  kod: { cls: "bg-moss text-cream", label: "kód" },
-  vystup: { cls: "bg-sky text-cream", label: "výstup" },
+  model: { cls: "bg-rust text-cream", label: "AI" },
+  kod: { cls: "bg-moss text-cream", label: "kontrola" },
+  vystup: { cls: "bg-sky text-cream", label: "výsledek" },
 } as const;
 
 type Params = { slug: string };
@@ -118,6 +118,21 @@ export default async function SystemDetailPage({ params }: { params: Promise<Par
                 ))}
               </ul>
             </div>
+            {s.limits?.length > 0 && (
+              <div>
+                <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3">
+                  <CircleSlash className="size-3.5" /> {systemDetail.limitsLabel}
+                </p>
+                <ul className="mt-2 space-y-1.5 text-sm">
+                  {s.limits.map((o) => (
+                    <li key={o} className="flex gap-2">
+                      <span className="text-ink-3">–</span>
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div>
               <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3">
                 <ShieldCheck className="size-3.5" /> {systemDetail.safetyLabel}

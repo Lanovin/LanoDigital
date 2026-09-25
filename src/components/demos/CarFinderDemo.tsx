@@ -70,7 +70,7 @@ export function CarFinderDemo() {
   return (
     <div className="card overflow-hidden">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-cream-2/70 px-4 py-3 sm:px-5">
-        <span className="font-mono text-xs text-ink-3">hledani_inzeratu · feed 17 aut · 3 ukázkové poptávky</span>
+        <span className="font-mono text-xs text-ink-3">Hledání v nabídce · 17 aut v nabídce · 3 ukázkové poptávky</span>
         {phase === "idle" && (
           <button type="button" onClick={run} className="btn btn-ink !py-2.5 !px-4 text-sm">
             <Play className="size-4" /> Najít auta
@@ -79,9 +79,9 @@ export function CarFinderDemo() {
         {running && (
           <span className="inline-flex items-center gap-2 font-mono text-xs text-rust-deep">
             <Bot className="size-4 animate-blink" />
-            {phase === "criteria" && "model čte poptávku…"}
-            {phase === "prefilter" && "kód filtruje nabídku…"}
-            {phase === "ranking" && "model posuzuje vhodnost…"}
+            {phase === "criteria" && "AI čte poptávku…"}
+            {phase === "prefilter" && "předvybírám auta…"}
+            {phase === "ranking" && "AI posuzuje, co se hodí…"}
           </span>
         )}
         {phase === "done" && (
@@ -151,7 +151,7 @@ export function CarFinderDemo() {
         <div className="p-4 sm:p-5">
           {phase === "idle" && (
             <div className="flex h-full min-h-[14rem] items-center justify-center rounded-2xl border border-dashed border-line-strong text-center text-sm text-ink-3">
-              <p className="max-w-xs">Vyberte poptávku a klikněte na <strong className="text-ink">Najít auta</strong>. Uvidíte kritéria, předfiltr a posouzení každého auta.</p>
+              <p className="max-w-xs">Vyberte poptávku a klikněte na <strong className="text-ink">Najít auta</strong>. Uvidíte, co zákazník chce, předvýběr a posouzení každého auta.</p>
             </div>
           )}
 
@@ -159,7 +159,7 @@ export function CarFinderDemo() {
             {(phase === "prefilter" || phase === "ranking" || phase === "done") && (
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
                 <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3">
-                  <Filter className="size-3.5" /> 2 · předfiltr v kódu zadarmo
+                  <Filter className="size-3.5" /> 2 · předvýběr podle ceny a parametrů
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {cars.map((c, i) => {
@@ -237,7 +237,7 @@ export function CarFinderDemo() {
 
       {phase === "done" && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="border-t border-line bg-cream-2/70 px-4 py-3 font-mono text-[11px] text-ink-2 sm:px-5">
-          2 volání modelu · předfiltr ušetřil {counts.find((c) => c.s === "vypadl")?.n} inzerátů · nic se zákazníkovi neposílá, obchodník rozhoduje
+          {counts.find((c) => c.s === "vypadl")?.n} aut vypadlo hned v předvýběru · zákazníkovi se nic neposílá, rozhoduje obchodník
         </motion.div>
       )}
     </div>

@@ -18,9 +18,9 @@ type Edge = { from: string; to: string; label?: string; dashed?: boolean };
 const NODES: FlowNode[] = [
   { id: "in", kind: "trigger", title: "Přijde vstup", sub: "e-mail · doklad · poptávka", icon: Mail },
   { id: "ai", kind: "model", title: "AI agent", sub: "přečte, pochopí, strukturuje", icon: Bot },
-  { id: "code", kind: "code", title: "Kód ověří", sub: "schéma · aritmetika · kontrolní součty", icon: ShieldCheck },
-  { id: "o1", kind: "output", title: "Tabulka", sub: "CSV pro účetní", icon: Table2 },
-  { id: "o2", kind: "output", title: "Report", sub: "HTML s důvody", icon: FileText },
+  { id: "code", kind: "code", title: "Kontrola", sub: "přepočet čísel · ověření údajů", icon: ShieldCheck },
+  { id: "o1", kind: "output", title: "Tabulka", sub: "pro účetní, do Excelu", icon: Table2 },
+  { id: "o2", kind: "output", title: "Přehled", sub: "u každé položky i důvod", icon: FileText },
   { id: "o3", kind: "output", title: "Upozornění", sub: "co nesedí, co zaplatit", icon: BellRing },
   { id: "o4", kind: "output", title: "Kalendář", sub: "splatnosti, termíny", icon: CalendarClock },
 ];
@@ -38,7 +38,7 @@ const EDGES: Edge[] = [
 const KIND_STYLE: Record<NodeKind, { box: string; icon: string; tag: string }> = {
   trigger: { box: "bg-cream border-line-strong", icon: "bg-paper text-ink", tag: "spouštěč" },
   model: { box: "bg-ink text-cream border-ink", icon: "bg-rust text-cream", tag: "AI model" },
-  code: { box: "bg-cream border-line-strong", icon: "bg-moss text-cream", tag: "čistý kód" },
+  code: { box: "bg-cream border-line-strong", icon: "bg-moss text-cream", tag: "kontrola" },
   output: { box: "bg-cream border-line-strong", icon: "bg-sky text-cream", tag: "výstup" },
 };
 
