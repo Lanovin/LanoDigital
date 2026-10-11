@@ -1,46 +1,51 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Mail, FileText, Search, Sparkles } from "lucide-react";
-import { MarbleRun } from "@/components/hero/MarbleRun";
-import { FlowDiagram } from "@/components/flow/FlowDiagram";
-import { EmailSorterDemo } from "@/components/demos/EmailSorterDemo";
-import { InvoiceReaderDemo } from "@/components/demos/InvoiceReaderDemo";
-import { CarFinderDemo } from "@/components/demos/CarFinderDemo";
-import { WebPreview } from "@/components/weby/WebCard";
+import { ArrowRight, ArrowUpRight, Mail, FileText, Search } from "lucide-react";
+import { Showreel, type Reel } from "@/components/weby/Showreel";
+import { WebBuilder } from "@/components/weby/WebBuilder";
+import { Packages } from "@/components/weby/Packages";
+import { WebPreview, findShot } from "@/components/weby/WebCard";
 import { Reveal, RichText, SectionHeading } from "@/components/site/Section";
 import { getContent } from "@/content/store";
 
-const DEMOS = {
-  "trideni-mailu": { anchor: "trideni", icon: Mail, Demo: EmailSorterDemo },
-  "cteni-dokladu": { anchor: "doklady", icon: FileText, Demo: InvoiceReaderDemo },
-  "hledani-inzeratu": { anchor: "inzeraty", icon: Search, Demo: CarFinderDemo },
-} as const;
+const SYSTEM_ICONS = { "trideni-mailu": Mail, "cteni-dokladu": FileText, "hledani-inzeratu": Search } as const;
+
+/** Pořadí webů v úvodní přehlídce: nejdřív to, co nejvíc ukáže. */
+const REEL_ORDER = ["vinylpodlahy", "mikaauto", "cargent", "lanovin"];
 
 export default async function HomePage() {
-  const { home, systems, weby, site } = await getContent();
+  const { home, systems, weby, sluzby, site } = await getContent();
+
+  const reel: Reel[] = [...weby]
+    .sort((a, b) => rank(a.slug) - rank(b.slug))
+    .map((w) => ({
+      slug: w.slug,
+      name: w.name,
+      kind: w.kind,
+      url: w.url,
+      display: w.display,
+      desktop: findShot(`${w.slug}-full`) ?? findShot(w.slug),
+      mobile: findShot(`${w.slug}-mobile`),
+    }));
 
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden">
-        <div className="container-x relative pt-6 sm:pt-10">
-          <Reveal>
-            <MarbleRun className="mx-auto max-w-5xl" />
-          </Reveal>
-
-          <div className="mx-auto mt-6 max-w-4xl text-center sm:mt-10">
-            <Reveal delay={0.1}>
+      <section className="relative">
+        <div className="container-x grid gap-12 pt-8 sm:pt-14 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">
+          <div>
+            <Reveal>
               <p className="eyebrow">{home.heroEyebrow}</p>
             </Reveal>
-            <Reveal delay={0.18}>
-              <h1 className="mt-4 text-[2.25rem] font-extrabold leading-[0.98] sm:text-6xl md:text-[4.6rem]">
+            <Reveal delay={0.08}>
+              <h1 className="mt-4 text-[2.35rem] font-extrabold leading-[0.98] sm:text-6xl lg:text-[3.6rem]">
                 <RichText text={home.heroTitle} />
               </h1>
             </Reveal>
-            <Reveal delay={0.28}>
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-2 sm:text-xl">{home.heroLead}</p>
+            <Reveal delay={0.16}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-2 sm:text-xl">{home.heroLead}</p>
             </Reveal>
-            <Reveal delay={0.38} className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a href="#systemy" className="btn btn-ink">
+            <Reveal delay={0.24} className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#weby" className="btn btn-ink">
                 {home.heroPrimary} <ArrowRight className="size-4" />
               </a>
               <Link href={site.cta.href} className="btn btn-cream">
@@ -48,10 +53,14 @@ export default async function HomePage() {
               </Link>
             </Reveal>
           </div>
+
+          <Reveal delay={0.2}>
+            <Showreel items={reel} />
+          </Reveal>
         </div>
 
         {/* běžící pás */}
-        <div className="mt-14 overflow-hidden border-y border-line bg-cream/40 py-3 sm:mt-20">
+        <div className="mt-16 overflow-hidden border-y border-line bg-cream/40 py-3 sm:mt-20">
           <div className="marquee-track flex w-max gap-10 whitespace-nowrap font-mono text-xs uppercase tracking-[0.18em] text-ink-2">
             {[...home.marquee, ...home.marquee].map((t, i) => (
               <span key={i} className="inline-flex items-center gap-10">
@@ -62,79 +71,84 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── SYSTÉMY ─────────────────────────────────────────── */}
-      <section id="systemy" className="container-x scroll-mt-24 pt-20 sm:pt-28">
-        <SectionHeading eyebrow={home.systemsEyebrow} title={home.systemsTitle} lead={home.systemsLead} />
-
-        <div className="mt-12 space-y-20">
-          {systems.map((s, i) => {
-            const demo = DEMOS[s.slug];
-            if (!demo) return null;
-            const { anchor, icon: Icon, Demo } = demo;
-            return (
-              <div key={s.slug} id={anchor} className="scroll-mt-24">
-                <Reveal className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                  <div className="max-w-2xl">
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex size-10 items-center justify-center rounded-xl bg-ink text-cream">
-                        <Icon className="size-5" />
-                      </span>
-                      <span className="font-mono text-xs text-ink-3">
-                        0{i + 1} / 0{systems.length}
-                      </span>
-                    </div>
-                    <h3 className="mt-3 text-3xl font-bold">{s.name}</h3>
-                    <p className="mt-2 text-ink-2">{s.pitch}</p>
-                  </div>
-                  <Link href={`/systemy/${s.slug}`} className="btn btn-cream shrink-0">
-                    {home.systemsDetailLabel} <ArrowUpRight className="size-4" />
-                  </Link>
-                </Reveal>
-                <Reveal delay={0.1}>
-                  <Demo />
-                </Reveal>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ── WEBY ─────────────────────────────────────────────── */}
-      <section id="weby" className="container-x scroll-mt-24 pt-24 sm:pt-32">
+      {/* ── HOTOVÉ WEBY ──────────────────────────────────────── */}
+      <section id="weby" className="container-x scroll-mt-24 pt-20 sm:pt-28">
         <SectionHeading eyebrow={home.webyEyebrow} title={home.webyTitle} lead={home.webyLead} />
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
+        <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
           {weby.map((w, i) => (
-            <Reveal key={w.slug} delay={i * 0.1}>
+            <Reveal key={w.slug} delay={(i % 2) * 0.1}>
               <WebPreview web={w} note={false} />
-              <div className="mt-4">
-                <p className="eyebrow">{w.kind}</p>
-                <h3 className="mt-1 text-2xl font-bold">{w.name}</h3>
-                <p className="mt-1.5 text-ink-2">{w.short}</p>
+              <div className="mt-5 flex gap-4">
+                <span className="font-mono text-xs leading-7 text-rust-deep">0{i + 1}</span>
+                <div className="min-w-0">
+                  <p className="eyebrow">{w.kind}</p>
+                  <h3 className="mt-1 text-2xl font-bold">{w.name}</h3>
+                  <p className="mt-1.5 text-ink-2">{w.short}</p>
+                  <Link href={`/weby#${w.slug}`} className="prose-link mt-2 inline-block text-sm font-semibold">
+                    {home.webyDetailLabel}
+                  </Link>
+                </div>
               </div>
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-6">
+        <Reveal className="mt-10">
           <Link href="/weby" className="prose-link font-semibold">
             {home.webyMore}
           </Link>
         </Reveal>
       </section>
 
-      {/* ── JAK TO FUNGUJE ───────────────────────────────────── */}
-      <section id="jak-to-funguje" className="container-x scroll-mt-24 pt-24 sm:pt-32">
-        <SectionHeading eyebrow={home.flowEyebrow} title={home.flowTitle} lead={home.flowLead} />
-        <Reveal className="card mt-10 px-4 py-10 sm:px-8 sm:py-12">
-          <FlowDiagram />
+      {/* ── JAK VZNIKÁ WEB ───────────────────────────────────── */}
+      <section id="jak-vznika-web" className="container-x scroll-mt-24 pt-24 sm:pt-32">
+        <SectionHeading eyebrow={home.buildEyebrow} title={home.buildTitle} lead={home.buildLead} />
+        <Reveal className="mt-12">
+          <WebBuilder steps={home.buildSteps} />
         </Reveal>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {home.flowCards.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.08} className="rounded-2xl border border-line bg-cream/60 p-5">
-              <Sparkles className="size-5 text-rust" />
-              <h3 className="mt-3 text-lg font-bold">{p.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{p.text}</p>
-            </Reveal>
-          ))}
+      </section>
+
+      {/* ── BALÍČKY ──────────────────────────────────────────── */}
+      <section id="cenik" className="container-x scroll-mt-24 pt-24 sm:pt-32">
+        <SectionHeading eyebrow={sluzby.packagesEyebrow} title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
+        <div className="mt-12">
+          <Packages sluzby={sluzby} weby={weby} />
+        </div>
+      </section>
+
+      {/* ── AI SYSTÉMY (menší sekce) ─────────────────────────── */}
+      <section id="systemy" className="container-x scroll-mt-24 pt-24 sm:pt-32">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeading eyebrow={home.systemsEyebrow} title={home.systemsTitle} lead={home.systemsLead} />
+          <Reveal delay={0.08} className="self-end">
+            <ul className="border-t border-line-strong">
+              {systems.map((s) => {
+                const Icon = SYSTEM_ICONS[s.slug] ?? Search;
+                return (
+                  <li key={s.slug} className="border-b border-line-strong">
+                    <Link
+                      href={`/systemy/${s.slug}`}
+                      className="group flex items-center gap-4 py-4 transition-colors hover:bg-cream/40 sm:px-2"
+                    >
+                      <span className="inline-flex size-10 shrink-0 items-center justify-center border border-line-strong bg-cream">
+                        <Icon className="size-5" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block font-display text-lg font-bold">{s.name}</span>
+                        <span className="block text-sm text-ink-2">{s.short}</span>
+                      </span>
+                      <span className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-ink-2 group-hover:text-rust-deep sm:inline-flex">
+                        {home.systemsDetailLabel} <ArrowUpRight className="size-4" />
+                      </span>
+                      <ArrowUpRight className="size-4 shrink-0 sm:hidden" />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <Link href="/systemy" className="btn btn-cream mt-6">
+              {home.systemsButton} <ArrowRight className="size-4" />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -178,4 +192,9 @@ export default async function HomePage() {
       </section>
     </>
   );
+}
+
+function rank(slug: string) {
+  const i = REEL_ORDER.indexOf(slug);
+  return i === -1 ? REEL_ORDER.length : i;
 }

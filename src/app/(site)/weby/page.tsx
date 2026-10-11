@@ -22,7 +22,8 @@ export default async function WebyPage() {
           <Reveal
             key={w.slug}
             as="article"
-            className={`grid gap-8 md:grid-cols-2 md:items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
+            id={w.slug}
+            className={`grid scroll-mt-24 gap-8 md:grid-cols-2 md:items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
           >
             <WebPreview web={w} priority={i === 0} />
             <div>
@@ -56,9 +57,12 @@ export default async function WebyPage() {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-10 text-center">
+        <Reveal className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link href="/kontakt" className="btn btn-rust">
             {webyPage.ctaButton} <ArrowUpRight className="size-4" />
+          </Link>
+          <Link href="/sluzby#cenik" className="btn btn-cream">
+            {webyPage.pricesButton}
           </Link>
         </Reveal>
       </section>

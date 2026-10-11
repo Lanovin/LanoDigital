@@ -67,6 +67,17 @@ export type WebRef = {
   liveNote: string;
 };
 
+export type WebPackage = {
+  name: string;
+  tagline: string;
+  price: string;
+  bullets: string[];
+  /** Název souboru náhledu (slug) reference, která balíček ukazuje. Prázdné = bez ukázky. */
+  example: string;
+  /** Zvýrazněný balíček se vykreslí tmavě. */
+  featured: boolean;
+};
+
 export type Content = {
   site: {
     name: string;
@@ -85,18 +96,22 @@ export type Content = {
     heroPrimary: string;
     heroSecondary: string;
     marquee: string[];
-    systemsEyebrow: string;
-    systemsTitle: string;
-    systemsLead: string;
-    systemsDetailLabel: string;
     webyEyebrow: string;
     webyTitle: string;
     webyLead: string;
     webyMore: string;
-    flowEyebrow: string;
-    flowTitle: string;
-    flowLead: string;
-    flowCards: TitleText[];
+    webyDetailLabel: string;
+    /** Interaktivní ukázka „jak vzniká web“: náčrt, struktura, vzhled, spuštění. */
+    buildEyebrow: string;
+    buildTitle: string;
+    buildLead: string;
+    buildSteps: TitleText[];
+    /** Menší sekce s AI systémy pod weby. */
+    systemsEyebrow: string;
+    systemsTitle: string;
+    systemsLead: string;
+    systemsDetailLabel: string;
+    systemsButton: string;
     aboutEyebrow: string;
     aboutTitle: string;
     aboutText: string;
@@ -113,6 +128,17 @@ export type Content = {
     eyebrow: string;
     title: string;
     lead: string;
+    /** Balíčky webů. Ukazují se tady i na úvodní stránce. */
+    packagesEyebrow: string;
+    packagesTitle: string;
+    packagesLead: string;
+    packages: WebPackage[];
+    packagesNote: string;
+    packagesExampleLabel: string;
+    packagesButton: string;
+    /** Další služby kromě webů: AI systémy a konzultace. */
+    extrasEyebrow: string;
+    extrasTitle: string;
     services: {
       icon: IconName;
       name: string;
@@ -147,6 +173,10 @@ export type Content = {
     lead: string;
     flowLabel: string;
     detailButton: string;
+    flowEyebrow: string;
+    flowTitle: string;
+    flowLead: string;
+    flowCards: TitleText[];
     bonusBadge: string;
     bonusTitle: string;
     bonusText: string;
@@ -183,6 +213,7 @@ export type Content = {
     howTitle: string;
     how: TitleText[];
     ctaButton: string;
+    pricesButton: string;
   };
 
   weby: WebRef[];

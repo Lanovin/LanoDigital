@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Check, X } from "lucide-react";
 import { Reveal, RichText, SectionHeading } from "@/components/site/Section";
 import { Icon } from "@/components/site/Icon";
+import { Packages } from "@/components/weby/Packages";
 import { getContent } from "@/content/store";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,37 +12,47 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SluzbyPage() {
-  const { sluzby } = await getContent();
+  const { sluzby, weby } = await getContent();
 
   return (
     <div className="container-x pt-12 sm:pt-20">
       <SectionHeading eyebrow={sluzby.eyebrow} title={sluzby.title} lead={sluzby.lead} />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
-        {sluzby.services.map((s, i) => (
-          <Reveal key={s.name} delay={i * 0.08} as="article" className="card flex flex-col p-6 sm:p-7">
-            <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-ink text-cream">
-              <Icon name={s.icon} className="size-6" />
-            </span>
-            <h2 className="mt-5 text-2xl font-bold">{s.name}</h2>
-            <p className="mt-1 font-medium text-rust-deep">{s.tagline}</p>
-            <p className="mt-3 text-sm leading-relaxed text-ink-2">{s.text}</p>
-            <ul className="mt-4 space-y-2">
-              {s.bullets.map((b) => (
-                <li key={b} className="flex gap-2 text-sm">
-                  <Check className="mt-0.5 size-4 shrink-0 text-moss" /> {b}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto flex items-center justify-between gap-3 pt-6">
-              <span className="whitespace-nowrap font-display text-lg font-bold text-ink">{s.price}</span>
-              <Link href={s.href} className="btn btn-cream !px-4 !py-2.5 text-sm">
-                {s.cta} <ArrowUpRight className="size-4" />
-              </Link>
-            </div>
-          </Reveal>
-        ))}
-      </div>
+      <section id="cenik" className="scroll-mt-24 pt-16">
+        <SectionHeading eyebrow={sluzby.packagesEyebrow} title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
+        <div className="mt-10">
+          <Packages sluzby={sluzby} weby={weby} />
+        </div>
+      </section>
+
+      <section className="pt-24 sm:pt-28">
+        <SectionHeading eyebrow={sluzby.extrasEyebrow} title={sluzby.extrasTitle} />
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {sluzby.services.map((s, i) => (
+            <Reveal key={s.name} delay={i * 0.08} as="article" className="card flex flex-col p-6 sm:p-7">
+              <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-ink text-cream">
+                <Icon name={s.icon} className="size-6" />
+              </span>
+              <h2 className="mt-5 text-2xl font-bold">{s.name}</h2>
+              <p className="mt-1 font-medium text-rust-deep">{s.tagline}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-2">{s.text}</p>
+              <ul className="mt-4 space-y-2">
+                {s.bullets.map((b) => (
+                  <li key={b} className="flex gap-2 text-sm">
+                    <Check className="mt-0.5 size-4 shrink-0 text-moss" /> {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto flex items-center justify-between gap-3 pt-6">
+                <span className="whitespace-nowrap font-display text-lg font-bold text-ink">{s.price}</span>
+                <Link href={s.href} className="btn btn-cream !px-4 !py-2.5 text-sm">
+                  {s.cta} <ArrowUpRight className="size-4" />
+                </Link>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
       <section className="pt-24 sm:pt-28">
         <SectionHeading eyebrow={sluzby.scopeEyebrow} title={sluzby.scopeTitle} lead={sluzby.scopeLead} />

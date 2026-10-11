@@ -13,9 +13,9 @@ import type { Content } from "./schema";
 export const DEFAULT_CONTENT: Content = {
   site: {
     name: "LanoDigital",
-    tagline: "Systémy, které za vás udělají práci.",
+    tagline: "Weby, které řeknou, co děláte.",
     description:
-      "LanoDigital staví AI systémy a webové stránky pro malé firmy a živnostníky. Třídění pošty, přepis faktur, hledání v nabídce a k tomu weby, které se dobře čtou.",
+      "LanoDigital navrhuje a staví webové stránky, e-shopy a aplikace pro malé firmy a živnostníky. Rychlé, čitelné na mobilu, s kontaktem na dosah palce. A když se hodí, i AI systémy, které ušetří ruční práci.",
     url: "https://lanodigital.cz",
     owner: {
       name: "Štěpán Lano",
@@ -24,9 +24,9 @@ export const DEFAULT_CONTENT: Content = {
       location: "Česko",
     },
     nav: [
-      { label: "Služby", href: "/sluzby" },
-      { label: "Ukázky", href: "/systemy" },
       { label: "Weby", href: "/weby" },
+      { label: "Služby a ceny", href: "/sluzby" },
+      { label: "AI systémy", href: "/systemy" },
       { label: "O mně", href: "/o-mne" },
       { label: "Kontakt", href: "/kontakt" },
     ],
@@ -34,31 +34,230 @@ export const DEFAULT_CONTENT: Content = {
   },
 
   home: {
-    heroEyebrow: "AI workflow · webové stránky",
-    heroTitle: "Stavíme systémy,\nkteré za vás *udělají práci*.",
+    heroEyebrow: "Webové stránky · e-shopy · aplikace",
+    heroTitle: "Weby, které řeknou, co děláte.\n*Za pár vteřin.*",
     heroLead:
-      "Pošta, faktury, poptávky. Věci, které dnes někdo přepisuje ručně. Postavím vám AI systém, který je přečte, zkontroluje a připraví k rozhodnutí. A když potřebujete web, udělám i ten.",
-    heroPrimary: "Vyzkoušet ukázky",
+      "Navrhnu a postavím web pro vaši firmu: od jednoduché prezentace po e-shop s kalkulačkou. Rychlý, čitelný na mobilu a s kontaktem na dosah palce. Hotové weby si můžete projet hned tady.",
+    heroPrimary: "Prohlédnout hotové weby",
     heroSecondary: "Konzultace zdarma",
     marquee: [
-      "třídění pošty",
-      "přepis faktur",
-      "hledání v nabídce",
-      "webové stránky",
-      "kontrola dokladů",
-      "automatizace",
-      "přehledy, které se dají číst",
+      "prezentační weby",
+      "e-shopy",
+      "webové aplikace",
+      "navržené pro mobil",
+      "texty, které se dají číst",
+      "kalkulačky a formuláře",
+      "administrace pro vaše texty",
+      "a k tomu AI systémy",
     ],
-    systemsEyebrow: "Ukázky systémů",
-    systemsTitle: "Tři systémy, které si můžete *rozkliknout*.",
-    systemsLead:
-      "Místo slibů si to vyzkoušejte. Každá ukázka přehrává, co systém opravdu udělal se vzorovými daty. Klikněte, sledujte a podívejte se, proč rozhodl tak, jak rozhodl.",
-    systemsDetailLabel: "Co to umí a neumí",
-    webyEyebrow: "Webové stránky",
+    webyEyebrow: "Hotové weby",
     webyTitle: "Weby a aplikace, *které někdo používá*.",
     webyLead:
-      "Od prezentačního webu až po aplikaci s účty a platbami kartou. Projeďte si je rovnou tady. Mika Auto se dá spustit naživo přímo v dlaždici.",
+      "Od prezentačního webu přes e-shop až po aplikaci s účty a platbami kartou. Projeďte si je rovnou tady. Mika Auto a Vinylpodlahy.cz se dají spustit naživo přímo v dlaždici.",
     webyMore: "Více o tom, jak weby dělám →",
+    webyDetailLabel: "Co web umí",
+    buildEyebrow: "Jak vzniká web",
+    buildTitle: "Od náčrtu po spuštění. *Klikněte si to.*",
+    buildLead:
+      "Web nezačíná barvami, ale tím, co má říct. Projděte si čtyři kroky, kterými prochází každý web, který dělám. Vpravo vidíte, jak se z nápadu stává hotová stránka.",
+    buildSteps: [
+      {
+        title: "Náčrt",
+        text: "Na schůzce projdeme, co děláte, kdo jsou vaši zákazníci a co mají na webu najít jako první. Z toho vznikne náčrt.",
+      },
+      {
+        title: "Rozvržení",
+        text: "Kde bude nabídka, kde ceník, kde kontakt. Ještě bez barev, aby šlo o obsah, ne o vzhled. Dostanete ho ke schválení i s texty.",
+      },
+      {
+        title: "Vzhled",
+        text: "Barvy, písmo, fotky. Aby web vypadal jako vy, ne jako šablona. Vzhled schvalujete dřív, než se začne stavět.",
+      },
+      {
+        title: "Spuštění",
+        text: "Web běží na vaší doméně, rychle se načte i na mobilu a najdou ho vyhledávače. Předám ho i s návodem, jak si upravit texty.",
+      },
+    ],
+    systemsEyebrow: "A k tomu AI systémy",
+    systemsTitle: "Když se u vás něco *přepisuje ručně*.",
+    systemsLead:
+      "Kromě webů stavím systémy, které přečtou poštu, faktury nebo poptávky a připraví je k rozhodnutí. Tři ukázky si můžete vyzkoušet.",
+    systemsDetailLabel: "Vyzkoušet",
+    systemsButton: "Všechny AI systémy",
+    aboutEyebrow: "Kdo za tím stojí",
+    aboutTitle: "Jsem Štěpán Lano. Stavím věci, které se dají vyzkoušet.",
+    aboutText:
+      "Je mi 18 a weby dělám od prvních projektů pro lidi kolem sebe. Dnes za mnou je firemní web, e-shop s kalkulačkou i vlastní aplikace s platbami kartou. Každý si tady můžete projet. LanoDigital je způsob, jak to dělat i pro vás.",
+    aboutButton: "Víc o mně",
+    aboutStats: [
+      { value: "4", label: "weby a aplikace online" },
+      { value: "3", label: "AI systémy k vyzkoušení" },
+      { value: "30 min", label: "první konzultace zdarma" },
+    ],
+    ctaTitle: "Potřebujete nový web?\nNebo *předělat* ten starý?",
+    ctaText:
+      "Pojďme si to na půl hodiny projít. Řeknu vám rovnou, co by web měl umět, jak dlouho to potrvá a kolik to bude stát.",
+    ctaButton: "Domluvit konzultaci zdarma",
+  },
+  sluzby: {
+    metaTitle: "Služby a ceny",
+    metaDescription:
+      "Webové stránky, e-shopy a aplikace pro malé firmy a živnostníky. Tři balíčky, co v nich dostanete, jak spolupráce probíhá a kolik to stojí. K tomu AI systémy a konzultace.",
+    eyebrow: "Služby a ceny",
+    title: "Weby pro malé firmy.\nUdělané *pořádně*.",
+    lead: "Dělám hlavně webové stránky: od jednoduché prezentace po e-shop s kalkulačkou. A když se u vás něco pořád přepisuje ručně, umím postavit i AI systém, který to udělá za vás.",
+    packagesEyebrow: "Balíčky",
+    packagesTitle: "Tři velikosti webu. *Vyberte, co potřebujete.*",
+    packagesLead:
+      "Nevíte, který se k vám hodí? Nevadí. Na konzultaci to projdeme a doporučím ten nejmenší, který vám bude stačit.",
+    packages: [
+      {
+        name: "Prezentační web",
+        tagline: "Pro živnostníky a malé firmy, které potřebují, aby je lidé našli a ozvali se.",
+        price: "od 8 000 Kč",
+        bullets: [
+          "Návrh struktury, vzhledu a textů",
+          "Navržený hlavně pro mobil",
+          "Kontakt, mapa, otevírací doba, ceník",
+          "Nastavení pro vyhledávače a rychlé načtení",
+          "Zprovoznění na vaší doméně",
+        ],
+        example: "lanovin",
+        featured: false,
+      },
+      {
+        name: "Web, který si spravujete sami",
+        tagline: "Pro firmy, kde se nabídka, ceny nebo novinky mění a nechcete kvůli tomu volat programátora.",
+        price: "cena po konzultaci",
+        bullets: [
+          "Všechno z prezentačního webu",
+          "Administrace, kde si texty a fotky měníte sami",
+          "Nabídka, která se načítá sama, třeba z vaší inzerce",
+          "Formuláře a poptávky rovnou do mailu",
+          "Návod a pomoc, když si nebudete vědět rady",
+        ],
+        example: "mikaauto",
+        featured: true,
+      },
+      {
+        name: "E-shop nebo aplikace",
+        tagline: "Když má web něco počítat, prodávat nebo hlídat: košík, kalkulačka, účty, platby kartou.",
+        price: "cena po konzultaci",
+        bullets: [
+          "Návrh toho, jak bude zákazník nakupovat",
+          "Kalkulačky a konfigurátory na míru",
+          "Košík, doprava a platby kartou",
+          "Uživatelské účty a předplacený kredit",
+          "Napojení na sklad nebo dodavatele",
+        ],
+        example: "vinylpodlahy",
+        featured: false,
+      },
+    ],
+    packagesNote: "Přesnou cenu dostanete předem a písemně, po první konzultaci. Ta je zdarma.",
+    packagesExampleLabel: "Například",
+    packagesButton: "Chci tenhle",
+    extrasEyebrow: "Kromě webů",
+    extrasTitle: "Co ještě umím.",
+    services: [
+      {
+        icon: "bot",
+        name: "AI systémy a automatizace",
+        tagline: "Systém, který přečte, zkontroluje a připraví k rozhodnutí.",
+        text: "Třídění pošty, přepis faktur a účtenek, hledání v nabídce podle poptávky. Postavím systém na míru tomu, s čím pracujete, s kontrolou, která zachytí chyby AI, a s přehledem, kterému rozumíte.",
+        bullets: [
+          "Rozbor toho, co se dnes dělá ručně",
+          "Vyzkoušení na vzorku vašich dat",
+          "Kontrola čísel a údajů, ne slepá důvěra v AI",
+          "Zprovoznění a návod, jak s tím pracovat",
+        ],
+        price: "od 15 000 Kč",
+        href: "/systemy",
+        cta: "Vyzkoušet ukázky",
+      },
+      {
+        icon: "chat",
+        name: "Konzultace a audit webu",
+        tagline: "Půl hodiny, po které víte, na čem jste.",
+        text: "Projdeme váš současný web, nebo to, co ve firmě zabírá čas. Řeknu vám rovnou, co bych změnil, co nechal a kolik by to zhruba stálo. Bez závazků.",
+        bullets: [
+          "Online nebo osobně",
+          "Konkrétní návrh, ne obecné rady",
+          "Odhad ceny a času",
+          "Když to nedává smysl, řeknu to",
+        ],
+        price: "první zdarma",
+        href: "/kontakt",
+        cta: "Domluvit termín",
+      },
+    ],
+    scopeEyebrow: "Co ode mě čekat",
+    scopeTitle: "Co dostanete. A co *ne*.",
+    scopeLead:
+      "Ať víte předem, na čem jste. Dělám weby pro malé firmy a živnostníky, pořádně a bez zbytečností.",
+    scopeCanLabel: "Co dostanete",
+    scopeCan: [
+      "Web navržený podle vaší firmy, ne podle šablony",
+      "Texty, které srozumitelně řeknou, co děláte a pro koho",
+      "Web, který funguje hlavně na mobilu, protože tam vás lidé hledají",
+      "Nastavení pro vyhledávače, aby vás lidé našli",
+      "Zprovoznění na doméně a předání s návodem",
+    ],
+    scopeCannotLabel: "Co ode mě nedostanete",
+    scopeCannot: [
+      "Slib prvního místa na Googlu. Ten vám poctivě nedá nikdo",
+      "Web z šablony, který vypadá jako sto dalších",
+      "Efekty a animace, které web zpomalí a nic neřeknou",
+      "Velké portály pro stovky lidí. Na to jsou větší agentury",
+    ],
+    processEyebrow: "Jak spolupráce probíhá",
+    processTitle: "Pět kroků. Každý *schvalujete vy*.",
+    process: [
+      {
+        number: "01",
+        title: "Schůzka",
+        text: "Popíšete, co děláte a co má web umět. Já se ptám, kdo jsou vaši zákazníci a co mají na webu najít jako první.",
+      },
+      {
+        number: "02",
+        title: "Rozvržení a texty",
+        text: "Dostanete rozvržení stránek a texty. Ještě bez barev, aby šlo o obsah. Upravujeme, dokud to nesedí.",
+      },
+      {
+        number: "03",
+        title: "Vzhled",
+        text: "Barvy, písmo a fotky podle vaší firmy. Vzhled vidíte a schvalujete dřív, než se začne stavět.",
+      },
+      {
+        number: "04",
+        title: "Stavba a spuštění",
+        text: "Web postavím, vyzkouším na mobilu i počítači a spustím na vaší doméně. Nastavím vyhledávače a měření návštěvnosti.",
+      },
+      {
+        number: "05",
+        title: "Předání a péče",
+        text: "Ukážu vám, jak si upravit texty. A když se něco změní, třeba přibude služba nebo nová fotka, pomůžu.",
+      },
+    ],
+    principlesEyebrow: "Zásady",
+    principlesTitle: "Na čem trvám u každého webu.",
+    principles: [
+      { bold: "Mobil na prvním místě.", text: "Většina lidí vás najde v telefonu, takže web se navrhuje nejdřív pro něj." },
+      { bold: "Kontakt na dosah palce.", text: "Telefon a formulář nesmí být schované. Zákazník je nemá hledat." },
+      { bold: "Rychlost není bonus.", text: "Web, který se dlouho načítá, lidé zavřou dřív, než zjistí, co děláte." },
+      { bold: "Nejdřív obsah, pak barvy.", text: "Hezký web, který neřekne, co děláte, je jen obrázek." },
+    ],
+  },
+
+  systemyPage: {
+    metaTitle: "AI systémy",
+    metaDescription:
+      "Tři ukázky AI systémů, které si můžete vyzkoušet: třídění pošty, čtení faktur a hledání v nabídce. U každého je vidět, co umí a co ne.",
+    eyebrow: "AI systémy",
+    title: "Co za vás může *udělat AI*.",
+    lead: "Tři systémy, na kterých si vyzkoušíte, co AI ve firmě zvládne: roztřídit poštu, přepsat faktury a najít v nabídce to, co zákazník chce. U každého najdete, co umí, co neumí a jak je to s vašimi daty.",
+    flowLabel: "jak to probíhá",
+    detailButton: "Detail a ukázka",
     flowEyebrow: "Jak to funguje",
     flowTitle: "Přečte, zkontroluje, připraví. *Rozhodujete vy.*",
     flowLead:
@@ -77,149 +276,6 @@ export const DEFAULT_CONTENT: Content = {
         text: "Systémy navrhují, ne jednají. Nic neodesílají, neplatí ani nemažou. Poslední slovo máte vždycky vy.",
       },
     ],
-    aboutEyebrow: "Kdo za tím stojí",
-    aboutTitle: "Jsem Štěpán Lano. Stavím věci, které se dají vyzkoušet.",
-    aboutText:
-      "Je mi 18 a poslední rok stavím systémy, které za lidi dělají opakovanou práci s poštou a doklady. U každého vím, jak často se trefí, a každý si můžete vyzkoušet. LanoDigital je způsob, jak to dělat i pro vás.",
-    aboutButton: "Víc o mně",
-    aboutStats: [
-      { value: "3", label: "systémy k vyzkoušení" },
-      { value: "3", label: "weby a aplikace online" },
-      { value: "30 min", label: "první konzultace zdarma" },
-    ],
-    ctaTitle: "Máte něco, co se dnes dělá ručně?",
-    ctaText:
-      "Pojďme si to na půl hodiny projít. Řeknu vám rovnou, jestli má smysl to automatizovat a co byste na konci dostali.",
-    ctaButton: "Domluvit konzultaci zdarma",
-  },
-
-  sluzby: {
-    metaTitle: "Služby",
-    metaDescription:
-      "AI systémy a automatizace, webové stránky a konzultace pro malé firmy a živnostníky. Co umím, co ne, jak spolupráce probíhá a kolik to stojí.",
-    eyebrow: "Služby",
-    title: "Tři věci, které umím *dobře*.",
-    lead: "Nedělám všechno. Dělám AI systémy, které za vás udělají opakovanou práci s poštou a doklady, weby, které se dobře čtou, a konzultace, po kterých víte, na čem jste.",
-    services: [
-      {
-        icon: "bot",
-        name: "AI systémy a automatizace",
-        tagline: "Systém, který přečte, zkontroluje a připraví k rozhodnutí.",
-        text: "Třídění pošty, přepis faktur a účtenek, hledání v nabídce podle poptávky, příprava podkladů. Postavím systém na míru tomu, s čím pracujete, s kontrolou, která zachytí chyby AI, a s přehledem, kterému rozumíte.",
-        bullets: [
-          "Rozbor toho, co se dnes dělá ručně",
-          "Vyzkoušení na vzorku vašich dat",
-          "Kontrola čísel a údajů, ne slepá důvěra v AI",
-          "Předem změřená přesnost, ne odhad",
-          "Zprovoznění a návod, jak s tím pracovat",
-        ],
-        price: "od 15 000 Kč",
-        href: "/systemy",
-        cta: "Podívat se na ukázky",
-      },
-      {
-        icon: "globe",
-        name: "Webové stránky",
-        tagline: "Rychlé, čitelné, s kontaktem na dosah palce.",
-        text: "Prezentační weby pro živnostníky a malé firmy. Návrh, texty, spuštění. Bez zbytečností, ale s charakterem, aby web vypadal jako vy, ne jako šablona.",
-        bullets: [
-          "Návrh struktury a vzhledu",
-          "Navržený hlavně pro mobil",
-          "Nastavení pro vyhledávače a rychlé načtení",
-          "Kontaktní formulář, mapa, ceník",
-          "Zprovoznění na vaší doméně",
-        ],
-        price: "od 8 000 Kč",
-        href: "/weby",
-        cta: "Hotové weby",
-      },
-      {
-        icon: "chat",
-        name: "Konzultace a audit",
-        tagline: "Půl hodiny, po které víte, jestli to má smysl.",
-        text: "Projdeme, co ve firmě zabírá čas. Řeknu vám rovnou, co se dá automatizovat, co ne a proč. A taky kolik by to zhruba stálo. Bez závazků.",
-        bullets: [
-          "Online nebo osobně",
-          "Konkrétní návrh, ne obecné rady",
-          "Odhad ceny a času",
-          "Když to nedává smysl, řeknu to",
-        ],
-        price: "první zdarma",
-        href: "/kontakt",
-        cta: "Domluvit termín",
-      },
-    ],
-    scopeEyebrow: "Co jde a co ne",
-    scopeTitle: "Ne všechno se vyplatí *automatizovat*.",
-    scopeLead:
-      "AI není kouzlo. Nejvíc pomůže u práce, která se pořád opakuje a má podobnou podobu. Tady je, co zvládne dobře a kde je lepší to nechat na člověku.",
-    scopeCanLabel: "Dá se automatizovat",
-    scopeCan: [
-      "Práce, která se opakuje každý den nebo týden: pošta, faktury, objednávky, poptávky",
-      "Přepisování z papíru, fotky, PDF nebo mailu do tabulky",
-      "Třídění a hledání: co spěchá, co je důležité, co se zákazníkovi hodí",
-      "Kontrola, jestli čísla a údaje sedí",
-      "Příprava podkladů a návrhů, které pak jen schválíte",
-    ],
-    scopeCannotLabel: "Co automatizovat nejde nebo se nevyplatí",
-    scopeCannot: [
-      "Rozhodování za vás. Systém navrhne, rozhodujete vy",
-      "Věci, které se dějí jednou za čas. Tam se automatizace nezaplatí",
-      "Práce úplně bez chyb. AI se občas splete, proto je v každém systému kontrola a u sporných věcí upozornění",
-      "Systém bez podkladů. Když není ani vzorek toho, co se zpracovává, není na čem stavět",
-      "Jednání s lidmi. Odpovědi zákazníkům, reklamace a dohody zůstávají na vás",
-    ],
-    processEyebrow: "Jak spolupráce probíhá",
-    processTitle: "Pět kroků. Platíte, až když vidíte výsledky.",
-    process: [
-      {
-        number: "01",
-        title: "Schůzka",
-        text: "Popíšete, co se dělá ručně a co vás na tom štve. Já se ptám, s čím pracujete, kolik toho je a co chcete mít na konci.",
-      },
-      {
-        number: "02",
-        title: "Návrh",
-        text: "Dostanete jednu stránku: co systém udělá, co ne, kde bude kontrola a kolik to bude stát.",
-      },
-      {
-        number: "03",
-        title: "Vyzkoušení na vašem vzorku",
-        text: "Nejdřív na malém vzorku. Uvidíte výsledky a jak často se systém trefí dřív, než zaplatíte celé.",
-      },
-      {
-        number: "04",
-        title: "Spuštění",
-        text: "Systém zprovozním tam, kde vám to vyhovuje: u vás na počítači, nebo online. A ukážu vám, jak s ním pracovat.",
-      },
-      {
-        number: "05",
-        title: "Provoz a úpravy",
-        text: "Když se něco změní, třeba přibude nový druh faktur nebo nová kategorie pošty, systém upravím. A hlídám, jestli pořád funguje, jak má.",
-      },
-    ],
-    principlesEyebrow: "Zásady",
-    principlesTitle: "Na čem trvám, i když to zákazník nechce slyšet.",
-    principles: [
-      { bold: "AI čte, výpočet kontroluje.", text: "Co se dá spočítat, se neodhaduje." },
-      { bold: "Systém navrhuje, ne jedná.", text: "Nic se neodesílá, neplatí ani nemaže bez vás." },
-      { bold: "Přesnost se měří, ne slibuje.", text: "Před spuštěním zkusíme systém na vašem vzorku a uvidíte, jak často se trefí." },
-      {
-        bold: "Vaše doklady a maily jsou citlivé.",
-        text: "Ke zpracování je dostane jen AI model, nikdo další, a výsledky zůstávají u vás.",
-      },
-    ],
-  },
-
-  systemyPage: {
-    metaTitle: "Ukázky systémů",
-    metaDescription:
-      "Tři ukázky AI systémů, které si můžete vyzkoušet: třídění pošty, čtení faktur a hledání v nabídce. U každého je vidět, co umí a co ne.",
-    eyebrow: "Ukázky systémů",
-    title: "Co za vás může *udělat AI*.",
-    lead: "Tři systémy, na kterých si vyzkoušíte, co AI ve firmě zvládne: roztřídit poštu, přepsat faktury a najít v nabídce to, co zákazník chce. U každého najdete, co umí, co neumí a jak je to s vašimi daty.",
-    flowLabel: "jak to probíhá",
-    detailButton: "Detail a ukázka",
     bonusBadge: "a další",
     bonusTitle: "Nevidíte tu, co řešíte vy?",
     bonusText:
@@ -405,10 +461,10 @@ export const DEFAULT_CONTENT: Content = {
   webyPage: {
     metaTitle: "Weby",
     metaDescription:
-      "Weby a aplikace od LanoDigital: Cargent, mikaauto.cz a Lanovín. Rychlé, čitelné na mobilu, s kontaktem na dosah palce.",
+      "Weby, e-shop a aplikace od LanoDigital: Cargent, vinylpodlahy.cz, mikaauto.cz a Lanovín. Rychlé, čitelné na mobilu, s kontaktem na dosah palce.",
     eyebrow: "Webové stránky",
     title: "Weby, které se *čtou*.\nAplikace, které *fungují*.",
-    lead: "Živnostník nebo malá firma potřebuje web, který za pár vteřin řekne, co děláte, kde jste a jak vás oslovit. Někdy je ale potřeba aplikace, která opravdu něco počítá, jako Cargent níž. Náhledy se dají projet, Mika Auto i spustit naživo.",
+    lead: "Živnostník nebo malá firma potřebuje web, který za pár vteřin řekne, co děláte, kde jste a jak vás oslovit. Někdy je ale potřeba aplikace, která opravdu něco počítá, jako Cargent nebo kalkulačka na Vinylpodlahy.cz níž. Náhledy se dají projet, Mika Auto a Vinylpodlahy.cz i spustit naživo.",
     howEyebrow: "Jak weby dělám",
     howTitle: "Co dostanete a jak to probíhá.",
     how: [
@@ -426,6 +482,7 @@ export const DEFAULT_CONTENT: Content = {
       },
     ],
     ctaButton: "Chci web",
+    pricesButton: "Balíčky a ceny",
   },
 
   weby: [
@@ -447,6 +504,26 @@ export const DEFAULT_CONTENT: Content = {
       ],
       accent: "#2563eb",
       live: false,
+      liveNote: "",
+    },
+    {
+      slug: "vinylpodlahy",
+      name: "Vinylpodlahy.cz",
+      url: "https://www.vinylpodlahy.cz",
+      display: "vinylpodlahy.cz",
+      kind: "E-shop · vinylové a SPC podlahy",
+      short: "E-shop s podlahami, kde kalkulačka spočítá celý projekt a vloží ho do košíku.",
+      description:
+        "Vlastní e-shop s vinylovými a SPC podlahami. Zákazník nemusí nic počítat: zadá rozměry místnosti, odpoví na pár otázek a kalkulačka mu doporučí vhodné podlahy s cenou celého projektu, včetně balení s prořezem, podložky, lišt a dopravy. Celý projekt pak vloží do košíku jedním tlačítkem. K tomu katalog s filtry, vzorky zdarma a poptávka pokládky. Zboží posílají velkoobchodní partneři přímo zákazníkovi, takže e-shop ukazuje skutečnou dostupnost v metrech a termín dodání ve dnech.",
+      highlights: [
+        "Kalkulačka projektu: z rozměrů místnosti hotový košík i s příslušenstvím",
+        "Katalog s filtry podle typu, tloušťky, zátěže, podlahového topení i koupelny",
+        "Doprava spočítaná podle hmotnosti, balík i paleta, vidět už u produktu",
+        "Vzorky zdarma a poptávka pokládky u podlaháře z okolí",
+        "Skutečná dostupnost v m² a termín dodání ve dnech",
+      ],
+      accent: "#b85c38",
+      live: true,
       liveNote: "",
     },
     {
@@ -492,14 +569,14 @@ export const DEFAULT_CONTENT: Content = {
   about: {
     metaTitle: "O mně",
     metaDescription:
-      "Štěpán Lano, 18 let. Stavím AI systémy, které šetří práci s poštou a doklady, a webové stránky pro malé firmy. Kdo jsem a jak pracuju.",
+      "Štěpán Lano, 18 let. Stavím webové stránky, e-shopy a aplikace pro malé firmy a k tomu AI systémy, které šetří ruční práci. Kdo jsem a jak pracuju.",
     eyebrow: "O mně",
     title: "Jsem Štěpán Lano. Je mi 18 a stavím systémy, které *jdou vyzkoušet*.",
-    lead: "LanoDigital je moje agentura na AI systémy a webové stránky. Vznikla z osobních projektů: chtěl jsem pochopit, jak se takové systémy staví od základů a jak se pozná, že opravdu fungují. Ty projekty si můžete vyzkoušet na tomhle webu a stejný přístup nabízím vám.",
+    lead: "LanoDigital je moje agentura na webové stránky a AI systémy. Vznikla z osobních projektů: chtěl jsem pochopit, jak se takové systémy staví od základů a jak se pozná, že opravdu fungují. Ty projekty si můžete vyzkoušet na tomhle webu a stejný přístup nabízím vám.",
     profileInitials: "ŠL",
     profileStats: [
       { label: "věk", value: "18" },
-      { label: "projektů k vyzkoušení", value: "6" },
+      { label: "projektů k vyzkoušení", value: "7" },
     ],
     profileButton: "Napsat e-mail",
     pathEyebrow: "Jak jsem se k tomu dostal",
@@ -518,7 +595,7 @@ export const DEFAULT_CONTENT: Content = {
       {
         period: "Teď",
         title: "LanoDigital",
-        text: "Stejné věci dělám pro firmy: systém, který přečte, co se dnes přepisuje ručně, a web, který se dá číst. Nejdřív vyzkoušení na vašich datech, pak faktura.",
+        text: "Stejné věci dělám pro firmy: hlavně weby, které za pár vteřin řeknou, co děláte, a když se hodí, i systém, který přečte, co se dnes přepisuje ručně.",
       },
     ],
     beliefsEyebrow: "Čemu věřím",
@@ -549,9 +626,9 @@ export const DEFAULT_CONTENT: Content = {
   kontakt: {
     metaTitle: "Kontakt a konzultace",
     metaDescription:
-      "Domluvte si konzultaci zdarma. Napište, co se u vás dělá ručně, a do dvou pracovních dnů se ozvu s návrhem termínu.",
+      "Domluvte si konzultaci zdarma. Napište, jaký web potřebujete nebo co se u vás dělá ručně, a do dvou pracovních dnů se ozvu s návrhem termínu.",
     eyebrow: "Kontakt · konzultace zdarma",
-    title: "Napište, co vás *zdržuje*.",
+    title: "Napište, co *potřebujete*.",
     lead: "Stačí pár vět. Do dvou pracovních dnů se ozvu s návrhem termínu na půlhodinovou schůzku, online nebo osobně.",
     info: [
       {
@@ -570,7 +647,7 @@ export const DEFAULT_CONTENT: Content = {
     formInterestLabel: "Co vás zajímá",
     formMessageLabel: "Co byste chtěli vyřešit?",
     formMessagePlaceholder:
-      "Stačí pár vět. Co se dnes dělá ručně, kolik času to bere a co byste chtěli mít hotové na konci.",
+      "Stačí pár vět. Co děláte, jestli už nějaký web máte a co by měl ten nový umět. Nebo co se u vás dělá ručně a kolik času to bere.",
     formWhenLabel: "Kdy se vám hodí schůzka?",
     formWhenPlaceholder: "např. příští týden odpoledne, online",
     formSubmit: "Domluvit schůzku",
@@ -581,7 +658,7 @@ export const DEFAULT_CONTENT: Content = {
   },
 
   footer: {
-    text: "Malá agentura na AI systémy a webové stránky pro živnostníky a malé firmy. Stavím věci, které se dají vyzkoušet, ne prezentace o tom, co by šlo.",
+    text: "Malá agentura na webové stránky pro živnostníky a malé firmy. A když se hodí, i AI systémy, které ušetří ruční práci. Stavím věci, které se dají vyzkoušet.",
     navLabel: "Navigace",
     contactLabel: "Kontakt",
   },

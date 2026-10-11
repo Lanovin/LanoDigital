@@ -68,15 +68,18 @@ export function Reveal({
   className = "",
   delay = 0,
   as = "div",
+  id,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   as?: "div" | "section" | "li" | "article";
+  id?: string;
 }) {
   const Tag = motion[as];
   return (
     <Tag
+      id={id}
       className={className}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}

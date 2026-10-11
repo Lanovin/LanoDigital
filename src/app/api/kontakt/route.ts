@@ -11,7 +11,7 @@ const Schema = z.object({
   jmeno: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(200),
   firma: z.string().trim().max(200).optional().or(z.literal("")),
-  zajem: z.enum(["system", "web", "oboji", "nevim"]).default("system"),
+  zajem: z.enum(["system", "web", "oboji", "nevim"]).default("web"),
   zprava: z.string().trim().min(10).max(4000),
   termin: z.string().trim().max(300).optional().or(z.literal("")),
   web: z.string().max(0).optional().or(z.literal("")), // honeypot – musí být prázdný

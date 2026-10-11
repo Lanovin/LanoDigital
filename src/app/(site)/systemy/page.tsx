@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Mail, FileText, Search, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Mail, FileText, Search, MessageSquare, Sparkles } from "lucide-react";
+import { MarbleRun } from "@/components/hero/MarbleRun";
+import { FlowDiagram } from "@/components/flow/FlowDiagram";
 import { Reveal, SectionHeading } from "@/components/site/Section";
 import { getContent } from "@/content/store";
 
@@ -23,6 +25,10 @@ export default async function SystemyPage() {
   return (
     <div className="container-x pt-12 sm:pt-20">
       <SectionHeading eyebrow={systemyPage.eyebrow} title={systemyPage.title} lead={systemyPage.lead} />
+
+      <Reveal delay={0.1} className="mt-6">
+        <MarbleRun className="mx-auto max-w-4xl" />
+      </Reveal>
 
       <div className="mt-12 grid gap-6">
         {systems.map((s, i) => {
@@ -89,6 +95,22 @@ export default async function SystemyPage() {
           )}
         </Reveal>
       </div>
+
+      <section id="jak-to-funguje" className="scroll-mt-24 pt-24 sm:pt-28">
+        <SectionHeading eyebrow={systemyPage.flowEyebrow} title={systemyPage.flowTitle} lead={systemyPage.flowLead} />
+        <Reveal className="card mt-10 px-4 py-10 sm:px-8 sm:py-12">
+          <FlowDiagram />
+        </Reveal>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {systemyPage.flowCards.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.08} className="rounded-2xl border border-line bg-cream/60 p-5">
+              <Sparkles className="size-5 text-rust" />
+              <h3 className="mt-3 text-lg font-bold">{p.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{p.text}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

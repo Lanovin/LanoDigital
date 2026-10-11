@@ -11,8 +11,8 @@ type Status =
   | { kind: "error"; message: string };
 
 const ZAJEM = [
-  { value: "system", label: "AI systém / automatizace" },
   { value: "web", label: "Webové stránky" },
+  { value: "system", label: "AI systém / automatizace" },
   { value: "oboji", label: "Obojí" },
   { value: "nevim", label: "Ještě nevím, chci to probrat" },
 ];
@@ -73,7 +73,7 @@ export function ContactForm({ t }: { t: Content["kontakt"] }) {
         />
         <div>
           <Label htmlFor="zajem">{t.formInterestLabel}</Label>
-          <select id="zajem" name="zajem" className={inputCls} defaultValue="system">
+          <select id="zajem" name="zajem" className={inputCls} defaultValue="web">
             {ZAJEM.map((z) => (
               <option key={z.value} value={z.value}>
                 {z.label}

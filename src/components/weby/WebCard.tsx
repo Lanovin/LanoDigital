@@ -9,7 +9,7 @@ import { SitePreview, type Shot } from "./SitePreview";
  * `next/image` znal poměr stran. Když soubor chybí, pošle `null` a náhled
  * se vykreslí stylizovaně — stránka se kvůli chybějícímu obrázku nerozbije.
  */
-function findShot(name: string): Shot {
+export function findShot(name: string): Shot {
   for (const ext of ["jpg", "jpeg", "png", "webp"]) {
     const rel = `/weby/${name}.${ext}`;
     const abs = path.join(process.cwd(), "public", rel);
