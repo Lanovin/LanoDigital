@@ -6,24 +6,16 @@ import { Fragment, type ReactNode } from "react";
 /**
  * Nadpis z administrace.
  *
- * Text mezi hvězdičkami se zvýrazní oranžově a nový řádek se zalomí.
- * Schválně nic víc: čím míň značek, tím míň se dá v administraci pokazit,
- * a všechno ostatní je záležitost stylů, ne textu.
+ * Nový řádek se zalomí, nic víc. Nadpisy jsou jednobarevné; hvězdičky,
+ * kterými se dřív značilo oranžové zvýraznění, se jen zahodí, aby je
+ * starší uložený text neukázal na webu.
  */
-export function RichText({ text, highlight = "text-rust" }: { text: string; highlight?: string }) {
+export function RichText({ text }: { text: string }) {
   return (
     <>
       {text.split("\n").map((line, li, lines) => (
         <Fragment key={li}>
-          {line.split("*").map((part, i) =>
-            i % 2 === 1 ? (
-              <span key={i} className={highlight}>
-                {part}
-              </span>
-            ) : (
-              <Fragment key={i}>{part}</Fragment>
-            ),
-          )}
+          {line.replaceAll("*", "")}
           {li < lines.length - 1 && <br />}
         </Fragment>
       ))}
@@ -53,7 +45,7 @@ export function SectionHeading({
           light ? "text-cream" : "text-ink"
         }`}
       >
-        {typeof title === "string" ? <RichText text={title} highlight={light ? "text-paper" : "text-rust"} /> : title}
+        {typeof title === "string" ? <RichText text={title} /> : title}
       </h2>
       {lead && (
         <p className={`mt-4 text-lg leading-relaxed ${light ? "text-cream/75" : "text-ink-2"}`}>{lead}</p>

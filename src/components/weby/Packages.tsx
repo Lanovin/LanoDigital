@@ -27,7 +27,6 @@ export function Packages({ sluzby, weby }: { sluzby: Content["sluzby"]; weby: Co
               <span className={`font-mono text-xs ${dark ? "text-paper" : "text-rust-deep"}`}>0{i + 1}</span>
               <h3 className={`mt-2 text-2xl font-bold leading-tight ${dark ? "text-cream" : ""}`}>{p.name}</h3>
               <p className={`mt-2 text-sm leading-relaxed ${dark ? "text-cream/75" : "text-ink-2"}`}>{p.tagline}</p>
-              <p className={`mt-5 font-display text-3xl font-bold ${dark ? "text-paper" : "text-ink"}`}>{p.price}</p>
               <ul className={`mt-5 space-y-2.5 border-t pt-5 ${dark ? "border-cream/20" : "border-line"}`}>
                 {p.bullets.map((b) => (
                   <li key={b} className={`flex gap-2 text-sm ${dark ? "text-cream/90" : ""}`}>

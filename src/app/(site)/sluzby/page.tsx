@@ -18,7 +18,7 @@ export default async function SluzbyPage() {
     <div className="container-x pt-12 sm:pt-20">
       <SectionHeading eyebrow={sluzby.eyebrow} title={sluzby.title} lead={sluzby.lead} />
 
-      <section id="cenik" className="scroll-mt-24 pt-16">
+      <section id="balicky" className="scroll-mt-24 pt-16">
         <SectionHeading eyebrow={sluzby.packagesEyebrow} title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
         <div className="mt-10">
           <Packages sluzby={sluzby} weby={weby} />
@@ -43,8 +43,7 @@ export default async function SluzbyPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto flex items-center justify-between gap-3 pt-6">
-                <span className="whitespace-nowrap font-display text-lg font-bold text-ink">{s.price}</span>
+              <div className="mt-auto pt-6">
                 <Link href={s.href} className="btn btn-cream !px-4 !py-2.5 text-sm">
                   {s.cta} <ArrowUpRight className="size-4" />
                 </Link>
@@ -99,7 +98,7 @@ export default async function SluzbyPage() {
             <div>
               <p className="eyebrow !text-paper">{sluzby.principlesEyebrow}</p>
               <h2 className="mt-3 text-3xl font-bold text-cream">
-                <RichText text={sluzby.principlesTitle} highlight="text-paper" />
+                <RichText text={sluzby.principlesTitle} />
               </h2>
             </div>
             <ul className="space-y-4 text-cream/80">

@@ -34,7 +34,7 @@ export type Section = {
 export const SECTIONS: Section[] = [
   { key: "site", title: "Web a kontakt", hint: "Název, adresa, kontaktní údaje a položky menu.", preview: "/" },
   { key: "home", title: "Úvodní stránka", hint: "Nadpis, podnadpis, běžící pás, hotové weby, jak vzniká web a AI systémy. Balíčky se mění v části Služby.", preview: "/" },
-  { key: "sluzby", title: "Služby", hint: "Balíčky webů s cenami, další služby, co dostanete a co ne, průběh spolupráce a zásady.", preview: "/sluzby" },
+  { key: "sluzby", title: "Služby", hint: "Balíčky webů, další služby, co dostanete a co ne, průběh spolupráce a zásady.", preview: "/sluzby" },
   { key: "systemyPage", title: "Systémy: přehled", hint: "Texty stránky se seznamem systémů a karta na konci.", preview: "/systemy" },
   { key: "systems", title: "Systémy: obsah", hint: "Popis každého systému, kroky, co umí a neumí, bezpečnost.", preview: "/systemy" },
   { key: "systemDetail", title: "Systémy: detail", hint: "Popisky, které se opakují na detailu každého systému.", preview: "/systemy/trideni-mailu" },
@@ -66,8 +66,7 @@ export const FIELDS: Record<string, FieldConfig> = {
   "site.cta.href": { label: "Odkaz" },
 
   // ── Úvodní stránka ───────────────────────────────────────────────
-  "home.heroEyebrow": { label: "Štítek nad nadpisem" },
-  "home.heroTitle": { label: "Hlavní nadpis", kind: "long", hint: "Hvězdičky zvýrazní oranžově: *takhle*. Nový řádek zalomí text." },
+  "home.heroTitle": { label: "Hlavní nadpis", kind: "long", hint: "Nový řádek zalomí text." },
   "home.heroLead": { label: "Podnadpis", kind: "long" },
   "home.heroPrimary": { label: "Tlačítko: hotové weby" },
   "home.heroSecondary": { label: "Tlačítko: konzultace" },
@@ -113,7 +112,6 @@ export const FIELDS: Record<string, FieldConfig> = {
   "sluzby.packages": { label: "Balíčky webů", hint: "Ukazují se tady i na úvodní stránce." },
   "sluzby.packages.*.name": { label: "Název balíčku" },
   "sluzby.packages.*.tagline": { label: "Pro koho je", kind: "long" },
-  "sluzby.packages.*.price": { label: "Cena" },
   "sluzby.packages.*.bullets": { label: "Co je součástí" },
   "sluzby.packages.*.example": {
     label: "Ukázka (název souboru náhledu reference)",
@@ -131,7 +129,6 @@ export const FIELDS: Record<string, FieldConfig> = {
   "sluzby.services.*.tagline": { label: "Jedna věta" },
   "sluzby.services.*.text": { label: "Popis", kind: "long" },
   "sluzby.services.*.bullets": { label: "Co je součástí" },
-  "sluzby.services.*.price": { label: "Cena" },
   "sluzby.services.*.href": { label: "Odkaz tlačítka" },
   "sluzby.services.*.cta": { label: "Text tlačítka" },
   "sluzby.scopeEyebrow": { label: "Co jde a co ne: štítek" },
@@ -223,7 +220,7 @@ export const FIELDS: Record<string, FieldConfig> = {
   "webyPage.howTitle": { label: "Postup: nadpis" },
   "webyPage.how": { label: "Kroky postupu" },
   "webyPage.ctaButton": { label: "Text tlačítka dole" },
-  "webyPage.pricesButton": { label: "Tlačítko na balíčky a ceny" },
+  "webyPage.pricesButton": { label: "Tlačítko na balíčky webů" },
 
   weby: { hint: "Přidat referenci jde. Náhledy se hledají v public/weby/ podle názvu níž; bez nich se ukáže barevná náhrada." },
   "weby.*.slug": { label: "Název souboru náhledu", hint: "Hledají se soubory public/weby/<název>.jpg, -full.jpg a -mobile.jpg." },

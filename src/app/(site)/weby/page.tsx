@@ -61,7 +61,7 @@ export default async function WebyPage() {
           <Link href="/kontakt" className="btn btn-rust">
             {webyPage.ctaButton} <ArrowUpRight className="size-4" />
           </Link>
-          <Link href="/sluzby#cenik" className="btn btn-cream">
+          <Link href="/sluzby#balicky" className="btn btn-cream">
             {webyPage.pricesButton}
           </Link>
         </Reveal>

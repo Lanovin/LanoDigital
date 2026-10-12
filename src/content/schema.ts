@@ -70,7 +70,6 @@ export type WebRef = {
 export type WebPackage = {
   name: string;
   tagline: string;
-  price: string;
   bullets: string[];
   /** Název souboru náhledu (slug) reference, která balíček ukazuje. Prázdné = bez ukázky. */
   example: string;
@@ -90,7 +89,6 @@ export type Content = {
   };
 
   home: {
-    heroEyebrow: string;
     heroTitle: string;
     heroLead: string;
     heroPrimary: string;
@@ -145,7 +143,6 @@ export type Content = {
       tagline: string;
       text: string;
       bullets: string[];
-      price: string;
       href: string;
       cta: string;
     }[];

@@ -168,7 +168,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<Par
           <div>
             <p className="eyebrow !text-paper">{systemDetail.ctaEyebrow}</p>
             <p className="mt-2 text-2xl font-bold text-cream">
-              <RichText text={systemDetail.ctaTitle} highlight="text-paper" />
+              <RichText text={systemDetail.ctaTitle} />
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

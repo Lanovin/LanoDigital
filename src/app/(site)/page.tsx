@@ -34,10 +34,7 @@ export default async function HomePage() {
         <div className="container-x grid gap-12 pt-8 sm:pt-14 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">
           <div>
             <Reveal>
-              <p className="eyebrow">{home.heroEyebrow}</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h1 className="mt-4 text-[2.35rem] font-extrabold leading-[0.98] sm:text-6xl lg:text-[3.6rem]">
+              <h1 className="text-[2.35rem] font-extrabold leading-[0.98] sm:text-6xl lg:text-[3.6rem]">
                 <RichText text={home.heroTitle} />
               </h1>
             </Reveal>
@@ -108,7 +105,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── BALÍČKY ──────────────────────────────────────────── */}
-      <section id="cenik" className="container-x scroll-mt-24 pt-24 sm:pt-32">
+      <section id="balicky" className="container-x scroll-mt-24 pt-24 sm:pt-32">
         <SectionHeading eyebrow={sluzby.packagesEyebrow} title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
         <div className="mt-12">
           <Packages sluzby={sluzby} weby={weby} />
@@ -159,7 +156,7 @@ export default async function HomePage() {
             <div>
               <p className="eyebrow !text-paper">{home.aboutEyebrow}</p>
               <h2 className="mt-3 text-3xl font-bold text-cream sm:text-4xl">
-                <RichText text={home.aboutTitle} highlight="text-paper" />
+                <RichText text={home.aboutTitle} />
               </h2>
               <p className="mt-4 max-w-xl leading-relaxed text-cream/75">{home.aboutText}</p>
               <Link href="/o-mne" className="btn btn-cream mt-6">

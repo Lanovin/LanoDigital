@@ -280,8 +280,7 @@ export function Editor({
           </div>
 
           <p className="mt-4 text-xs leading-relaxed text-ink-3">
-            Nadpisy: text mezi hvězdičkami se zvýrazní oranžově (<code className="font-mono">*takhle*</code>), nový řádek
-            se zalomí. Ukázková data tří dem (maily, doklady, inzeráty) se tady needitují, jsou to vstupy pro výpočet,
+            Nadpisy: nový řádek se zalomí. Ukázková data tří dem (maily, doklady, inzeráty) se tady needitují, jsou to vstupy pro výpočet,
             ne texty webu.
           </p>
         </main>
