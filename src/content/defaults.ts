@@ -15,11 +15,11 @@ export const DEFAULT_CONTENT: Content = {
     tagline: "Weby, které řeknou, co děláte.",
     description:
       "LanoDigital navrhuje a staví webové stránky, e-shopy a aplikace pro malé firmy a živnostníky. Rychlé, čitelné na mobilu, s kontaktem na dosah palce. A když se hodí, i AI systémy, které ušetří ruční práci.",
-    url: "https://lanodigital.cz",
+    url: "https://www.lanodigital.cz",
     owner: {
       name: "Štěpán Lano",
       role: "zakladatel, vývojář",
-      email: "kontakt@lanodigital.cz",
+      email: "info@lanodigital.cz",
       location: "Česko",
     },
     nav: [

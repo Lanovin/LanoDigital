@@ -48,9 +48,10 @@ export async function POST(req: Request) {
     d.zprava,
   ].join("\n");
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO ?? (await getContent()).site.owner.email;
-  const from = process.env.CONTACT_FROM ?? "LanoDigital <onboarding@resend.dev>";
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const owner = (await getContent()).site.owner.email;
+  const to = process.env.CONTACT_TO?.trim() || owner;
+  const from = process.env.CONTACT_FROM?.trim() || "LanoDigital <onboarding@resend.dev>";
 
   if (!apiKey) {
     console.log("[kontakt] (bez RESEND_API_KEY, jen log)\n" + text);
@@ -71,11 +72,11 @@ export async function POST(req: Request) {
     });
     if (!res.ok) {
       console.error("[kontakt] Resend odpověděl", res.status, await res.text());
-      return NextResponse.json({ ok: false, error: "E-mail se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo." }, { status: 502 });
+      return NextResponse.json({ ok: false, error: `E-mail se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na ${owner}.` }, { status: 502 });
     }
     return NextResponse.json({ ok: true, delivered: true });
   } catch (err) {
     console.error("[kontakt]", err);
-    return NextResponse.json({ ok: false, error: "E-mail se nepodařilo odeslat." }, { status: 502 });
+    return NextResponse.json({ ok: false, error: `E-mail se nepodařilo odeslat. Napište prosím přímo na ${owner}.` }, { status: 502 });
   }
 }

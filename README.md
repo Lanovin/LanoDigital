@@ -1,6 +1,6 @@
 # LanoDigital – web
 
-Prezentační web agentury LanoDigital: AI workflow a webové stránky.
+Prezentační web agentury LanoDigital: webové stránky, e-shopy a aplikace, k tomu AI systémy.
 Next.js (App Router), TypeScript, Tailwind 4, Motion.
 
 ```bash
@@ -36,8 +36,9 @@ je to jediná zábrana mezi internetem a obsahem webu.
 - U každého změněného pole je „původní“ na vrácení jedné hodnoty, vlevo dole
   „Vrátit vše na původní“.
 
-**Zápis nadpisů:** text mezi hvězdičkami zoranžoví (`Weby, které se *čtou*`),
-nový řádek se zalomí. Nic jiného se v textech neinterpretuje.
+**Zápis nadpisů:** nový řádek se zalomí, nic jiného se v textech neinterpretuje.
+Nadpisy jsou jednobarevné, hvězdičky se na webu zahodí. Na webu schválně nejsou
+konkrétní ceny ani malé štítky nad nadpisy.
 
 **Co se v administraci needituje:** ukázková data tří dem (maily, doklady,
 inzeráty). Nejsou to texty webu, ale vstupy, na kterých dema počítají — žijí
@@ -105,9 +106,9 @@ scripts/obsah.mjs         npm run obsah:test / :nahraj / :stahni
 src/
   app/
     (site)/               veřejný web – navigace a patička
-      page.tsx            úvod: animace, nadpis, tři klikací ukázky, weby, „jak to funguje“
-      sluzby/             služby, průběh spolupráce, zásady
-      systemy/            přehled systémů + detail každého (/systemy/<slug>) s ukázkou
+      page.tsx            úvod: přehlídka webů, hotové weby, „jak vzniká web“, balíčky, AI systémy
+      sluzby/             balíčky webů, další služby, co ode mě čekat, průběh, zásady
+      systemy/            AI systémy: přehled, animace, schéma + detail (/systemy/<slug>) s ukázkou
       weby/               reference webů
       o-mne/              o Štěpánovi
       kontakt/            formulář na domluvení schůzky
@@ -123,10 +124,11 @@ src/
     store.ts              čtení a zápis: Supabase, nebo soubor
     labels.ts             české popisky polí pro administraci
   components/
-    hero/MarbleRun.tsx    animace kuličky (SVG + SMIL, bez JS)
-    flow/FlowDiagram.tsx  schéma: vstup → AI agent → kód ověří → výstupy
-    demos/                tři interaktivní ukázky
-    weby/                 náhledy referencí (obrázek i živý web v rámu)
+    hero/MarbleRun.tsx    animace kuličky na /systemy (SVG + SMIL, bez JS)
+    flow/FlowDiagram.tsx  schéma na /systemy: vstup → AI agent → kód ověří → výstupy
+    demos/                tři interaktivní ukázky AI systémů
+    weby/                 náhledy referencí (SitePreview), přehlídka na úvodu (Showreel),
+                          „jak vzniká web“ (WebBuilder), balíčky (Packages)
     admin/                editor obsahu
     site/                 navigace, patička, nadpisy sekcí, wordmark, ikony
   data/demo-*.ts          ukázková data a předpočítané výsledky pro dema
@@ -141,7 +143,7 @@ k API nikdy neopustí váš počítač.
 
 ## Náhledy referencí
 
-Dlaždice na `/weby` a na úvodu ukazují hotové weby dvěma způsoby:
+Dlaždice na `/weby` a na úvodu (a přehlídka v úvodu stránky) ukazují hotové weby dvěma způsoby:
 
 - **Obrázek** — celá stránka jako jeden vysoký snímek, dá se jím projet.
   Soubory jsou v `public/weby/`:
@@ -159,14 +161,15 @@ prohlížeč v cizím rámu zablokuje. Po přesunu na běžný hosting by šel s
 
 ## Co doplnit
 
-- **Kontaktní e-mail** – v administraci, část *Web a kontakt* (teď je tam
-  zástupná adresa).
-- **Odesílání formuláře** – do `.env.local` doplňte `RESEND_API_KEY`
-  z [resend.com](https://resend.com). Bez klíče se zpráva jen zaloguje do
-  konzole serveru, formulář ale funguje.
-- **Doména** – v administraci, *Web a kontakt → Adresa webu* (používá se pro
-  sitemap a náhled odkazu).
-- **Logo** – až bude, vyměňte obsah `components/site/Wordmark.tsx`.
+- **IČO a sídlo** do patičky a stránka se zásadami zpracování osobních údajů
+  (formulář sbírá jméno a e-mail).
+- **Logo** – až bude, vyměňte obsah `components/site/Wordmark.tsx`
+  (a `app/icon.tsx`, `app/opengraph-image.tsx`).
+- **Fotka** do „O mně“ místo iniciál (nepovinné).
+
+Hotové a nastavené: doména `www.lanodigital.cz`, e-mail `info@lanodigital.cz`,
+odesílání formuláře přes Resend (doména ověřená v Resendu), náhled při sdílení
+(`app/opengraph-image.tsx`) a favicon (`app/icon.tsx`).
 
 ## Nasazení
 
@@ -178,7 +181,9 @@ Do proměnných prostředí na hostingu patří:
 | `ADMIN_PASSWORD` | ano | bez ní je administrace vypnutá |
 | `SUPABASE_URL` | ano | aby šlo ukládat texty na nasazeném webu |
 | `SUPABASE_SECRET_KEY` | ano | totéž; tajný klíč (`sb_secret_…`), nikdy do kódu |
-| `RESEND_API_KEY` | ne | bez ní se poptávka jen zaloguje |
+| `RESEND_API_KEY` | ano | bez ní se poptávka jen zaloguje a nikam nedojde |
+| `CONTACT_TO` | ano | kam chodí poptávky (`info@lanodigital.cz`) |
+| `CONTACT_FROM` | ano | odesílatel, např. `LanoDigital <web@lanodigital.cz>`; doména musí být ověřená v Resendu (jejich DNS záznamy: CNAME s tečkou na konci hodnoty!) |
 | `ADMIN_SECRET` | ne | podpis přihlašovací cookie |
 
 Bez těch proměnných se web postaví a poběží — jen pojede na výchozích textech
