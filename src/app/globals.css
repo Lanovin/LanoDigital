@@ -219,6 +219,54 @@ p { text-wrap: pretty; }
 }
 .marquee-track { animation: marquee 32s linear infinite; }
 
+/* Blok na stránce Kontakt: ostré rohy, jedna čára. Při najetí myší (nebo tabulátorem)
+   se kolem bloku vysune druhý rámeček a dole se vykreslí červená linka. */
+.contact-block {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1.75rem;
+  text-align: left;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--cream) 70%, transparent);
+  transition: background 200ms ease;
+}
+.contact-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  transition: inset 280ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 200ms ease;
+}
+.contact-block::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--rust);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 340ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.contact-block:hover,
+.contact-block:focus-visible,
+.contact-block[aria-expanded="true"] { background: var(--cream); }
+.contact-block:hover::before,
+.contact-block:focus-visible::before,
+.contact-block[aria-expanded="true"]::before { inset: -8px; opacity: 1; }
+.contact-block:hover::after,
+.contact-block:focus-visible::after,
+.contact-block[aria-expanded="true"]::after { transform: scaleX(1); }
+.contact-arrow { transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+a.contact-block:hover .contact-arrow { transform: translate(4px, -4px); }
+@media (prefers-reduced-motion: reduce) {
+  .contact-block::before, .contact-block::after { transition: none; }
+}
+
 /* Přehlídka webů v úvodu: stránka se projede v rámu shora dolů.
    Rám je kontejner, takže 100cqh = jeho výška a obrázek dojede přesně na konec. */
 @keyframes reel-scroll {

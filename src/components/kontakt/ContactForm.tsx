@@ -42,7 +42,7 @@ export function ContactForm({ t }: { t: Content["kontakt"] }) {
 
   if (status.kind === "ok") {
     return (
-      <div className="card p-8 text-center">
+      <div className="card !rounded-none p-8 text-center">
         <CheckCircle2 className="mx-auto size-10 text-moss" />
         <h3 className="mt-3 text-2xl font-bold">{t.formSuccessTitle}</h3>
         <p className="mt-2 text-ink-2">
@@ -61,7 +61,7 @@ export function ContactForm({ t }: { t: Content["kontakt"] }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="card p-5 sm:p-7">
+    <form onSubmit={onSubmit} className="card !rounded-none p-5 sm:p-7">
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label={t.formNameLabel} name="jmeno" required autoComplete="name" />
         <Field label={t.formEmailLabel} name="email" type="email" required autoComplete="email" />
@@ -123,7 +123,7 @@ export function ContactForm({ t }: { t: Content["kontakt"] }) {
 }
 
 const inputCls =
-  "mt-1.5 w-full rounded-xl border border-line-strong bg-white/70 px-3.5 py-2.5 text-sm outline-none transition focus:border-ink focus:bg-white focus:ring-2 focus:ring-ink/10 placeholder:text-ink-3/70";
+  "mt-1.5 w-full border border-line-strong bg-white/70 px-3.5 py-2.5 text-sm outline-none transition focus:border-ink focus:bg-white focus:ring-2 focus:ring-ink/10 placeholder:text-ink-3/70";
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (

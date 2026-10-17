@@ -220,7 +220,10 @@ export type Content = {
     metaDescription: string;
     title: string;
     lead: string;
-    info: { icon: IconName; title: string; text: string }[];
+    emailTitle: string;
+    emailText: string;
+    formBlockTitle: string;
+    formBlockText: string;
     formNameLabel: string;
     formEmailLabel: string;
     formCompanyLabel: string;
