@@ -48,13 +48,11 @@ export const DEFAULT_CONTENT: Content = {
       "administrace pro vaše texty",
       "a k tomu AI systémy",
     ],
-    webyEyebrow: "Hotové weby",
     webyTitle: "Weby a aplikace, které někdo používá.",
     webyLead:
       "Od prezentačního webu přes e-shop až po aplikaci s účty a platbami kartou. Projeďte si je rovnou tady. Mika Auto a Vinylpodlahy.cz se dají spustit naživo přímo v dlaždici.",
     webyMore: "Více o tom, jak weby dělám →",
     webyDetailLabel: "Co web umí",
-    buildEyebrow: "Jak vzniká web",
     buildTitle: "Od náčrtu po spuštění. Klikněte si to.",
     buildLead:
       "Web nezačíná barvami, ale tím, co má říct. Projděte si čtyři kroky, kterými prochází každý web, který dělám. Vpravo vidíte, jak se z nápadu stává hotová stránka.",
@@ -76,13 +74,11 @@ export const DEFAULT_CONTENT: Content = {
         text: "Web běží na vaší doméně, rychle se načte i na mobilu a najdou ho vyhledávače. Předám ho i s návodem, jak si upravit texty.",
       },
     ],
-    systemsEyebrow: "A k tomu AI systémy",
     systemsTitle: "Když se u vás něco přepisuje ručně.",
     systemsLead:
       "Kromě webů stavím systémy, které přečtou poštu, faktury nebo poptávky a připraví je k rozhodnutí. Tři ukázky si můžete vyzkoušet.",
     systemsDetailLabel: "Vyzkoušet",
     systemsButton: "Všechny AI systémy",
-    aboutEyebrow: "Kdo za tím stojí",
     aboutTitle: "Jsem Štěpán Lano. Stavím věci, které se dají vyzkoušet.",
     aboutText:
       "Je mi 18 a weby dělám od prvních projektů pro lidi kolem sebe. Dnes za mnou je firemní web, e-shop s kalkulačkou i vlastní aplikace s platbami kartou. Každý si tady můžete projet. LanoDigital je způsob, jak to dělat i pro vás.",
@@ -101,10 +97,8 @@ export const DEFAULT_CONTENT: Content = {
     metaTitle: "Služby",
     metaDescription:
       "Webové stránky, e-shopy a aplikace pro malé firmy a živnostníky. Tři balíčky, co v nich dostanete a jak spolupráce probíhá. K tomu AI systémy a konzultace.",
-    eyebrow: "Služby",
     title: "Weby pro malé firmy.\nUdělané pořádně.",
     lead: "Dělám hlavně webové stránky: od jednoduché prezentace po e-shop s kalkulačkou. A když se u vás něco pořád přepisuje ručně, umím postavit i AI systém, který to udělá za vás.",
-    packagesEyebrow: "Balíčky",
     packagesTitle: "Tři velikosti webu. Vyberte, co potřebujete.",
     packagesLead:
       "Nevíte, který se k vám hodí? Nevadí. Na konzultaci to projdeme a doporučím ten nejmenší, který vám bude stačit.",
@@ -152,7 +146,6 @@ export const DEFAULT_CONTENT: Content = {
     packagesNote: "Cenu vám řeknu po první konzultaci, předem a písemně. Konzultace je zdarma.",
     packagesExampleLabel: "Například",
     packagesButton: "Chci tenhle",
-    extrasEyebrow: "Kromě webů",
     extrasTitle: "Co ještě umím.",
     services: [
       {
@@ -184,7 +177,6 @@ export const DEFAULT_CONTENT: Content = {
         cta: "Domluvit termín",
       },
     ],
-    scopeEyebrow: "Co ode mě čekat",
     scopeTitle: "Co dostanete. A co ne.",
     scopeLead:
       "Ať víte předem, na čem jste. Dělám weby pro malé firmy a živnostníky, pořádně a bez zbytečností.",
@@ -203,7 +195,6 @@ export const DEFAULT_CONTENT: Content = {
       "Efekty a animace, které web zpomalí a nic neřeknou",
       "Velké portály pro stovky lidí. Na to jsou větší agentury",
     ],
-    processEyebrow: "Jak spolupráce probíhá",
     processTitle: "Pět kroků. Každý schvalujete vy.",
     process: [
       {
@@ -232,7 +223,6 @@ export const DEFAULT_CONTENT: Content = {
         text: "Ukážu vám, jak si upravit texty. A když se něco změní, třeba přibude služba nebo nová fotka, pomůžu.",
       },
     ],
-    principlesEyebrow: "Zásady",
     principlesTitle: "Na čem trvám u každého webu.",
     principles: [
       { bold: "Mobil na prvním místě.", text: "Většina lidí vás najde v telefonu, takže web se navrhuje nejdřív pro něj." },
@@ -246,12 +236,10 @@ export const DEFAULT_CONTENT: Content = {
     metaTitle: "AI systémy",
     metaDescription:
       "Tři ukázky AI systémů, které si můžete vyzkoušet: třídění pošty, čtení faktur a hledání v nabídce. U každého je vidět, co umí a co ne.",
-    eyebrow: "AI systémy",
     title: "Co za vás může udělat AI.",
     lead: "Tři systémy, na kterých si vyzkoušíte, co AI ve firmě zvládne: roztřídit poštu, přepsat faktury a najít v nabídce to, co zákazník chce. U každého najdete, co umí, co neumí a jak je to s vašimi daty.",
     flowLabel: "jak to probíhá",
     detailButton: "Detail a ukázka",
-    flowEyebrow: "Jak to funguje",
     flowTitle: "Přečte, zkontroluje, připraví. Rozhodujete vy.",
     flowLead:
       "Všechny systémy fungují stejně. AI přečte to, čemu by jinak musel rozumět člověk: mail, fakturu, poptávku. Co se dá spočítat nebo ověřit, se pak zkontroluje zvlášť. A když něco nesedí, systém to řekne, místo aby to schoval.",
@@ -278,9 +266,7 @@ export const DEFAULT_CONTENT: Content = {
 
   systemDetail: {
     backLabel: "Všechny ukázky",
-    systemLabel: "Systém",
     stepLabel: "krok",
-    demoEyebrow: "Vyzkoušejte",
     demoTitle: "Ukázka na vzorových datech",
     demoLead: "Ukázka přehrává skutečný výsledek systému na vzorových datech. Klikněte a sledujte.",
     forWhomLabel: "Pro koho",
@@ -288,7 +274,6 @@ export const DEFAULT_CONTENT: Content = {
     limitsLabel: "Co to neumí",
     safetyLabel: "Vaše data a bezpečnost",
     insightsLabel: "Proč se na to dá spolehnout",
-    ctaEyebrow: "Chcete něco podobného?",
     ctaTitle: "Postavím to na vašich datech. Nejdřív vyzkoušení, pak faktura.",
     ctaButton: "Domluvit konzultaci",
     nextPrefix: "Další:",
@@ -455,10 +440,8 @@ export const DEFAULT_CONTENT: Content = {
     metaTitle: "Weby",
     metaDescription:
       "Weby, e-shop a aplikace od LanoDigital: Cargent, vinylpodlahy.cz, mikaauto.cz a Lanovín. Rychlé, čitelné na mobilu, s kontaktem na dosah palce.",
-    eyebrow: "Webové stránky",
     title: "Weby, které se čtou.\nAplikace, které fungují.",
     lead: "Živnostník nebo malá firma potřebuje web, který za pár vteřin řekne, co děláte, kde jste a jak vás oslovit. Někdy je ale potřeba aplikace, která opravdu něco počítá, jako Cargent nebo kalkulačka na Vinylpodlahy.cz níž. Náhledy se dají projet, Mika Auto a Vinylpodlahy.cz i spustit naživo.",
-    howEyebrow: "Jak weby dělám",
     howTitle: "Co dostanete a jak to probíhá.",
     how: [
       {
@@ -563,7 +546,6 @@ export const DEFAULT_CONTENT: Content = {
     metaTitle: "O mně",
     metaDescription:
       "Štěpán Lano, 18 let. Stavím webové stránky, e-shopy a aplikace pro malé firmy a k tomu AI systémy, které šetří ruční práci. Kdo jsem a jak pracuju.",
-    eyebrow: "O mně",
     title: "Jsem Štěpán Lano. Je mi 18 a stavím systémy, které jdou vyzkoušet.",
     lead: "LanoDigital je moje agentura na webové stránky a AI systémy. Vznikla z osobních projektů: chtěl jsem pochopit, jak se takové systémy staví od základů a jak se pozná, že opravdu fungují. Ty projekty si můžete vyzkoušet na tomhle webu a stejný přístup nabízím vám.",
     profileInitials: "ŠL",
@@ -572,7 +554,6 @@ export const DEFAULT_CONTENT: Content = {
       { label: "projektů k vyzkoušení", value: "7" },
     ],
     profileButton: "Napsat e-mail",
-    pathEyebrow: "Jak jsem se k tomu dostal",
     pathTitle: "Od webů k systémům.",
     path: [
       {
@@ -591,7 +572,6 @@ export const DEFAULT_CONTENT: Content = {
         text: "Stejné věci dělám pro firmy: hlavně weby, které za pár vteřin řeknou, co děláte, a když se hodí, i systém, který přečte, co se dnes přepisuje ručně.",
       },
     ],
-    beliefsEyebrow: "Čemu věřím",
     beliefsTitle: "Čtyři věci, které se v mé práci opakují.",
     beliefs: [
       {
@@ -620,7 +600,6 @@ export const DEFAULT_CONTENT: Content = {
     metaTitle: "Kontakt a konzultace",
     metaDescription:
       "Domluvte si konzultaci zdarma. Napište, jaký web potřebujete nebo co se u vás dělá ručně, a do dvou pracovních dnů se ozvu s návrhem termínu.",
-    eyebrow: "Kontakt · konzultace zdarma",
     title: "Napište, co potřebujete.",
     lead: "Stačí pár vět. Do dvou pracovních dnů se ozvu s návrhem termínu na půlhodinovou schůzku, online nebo osobně.",
     info: [

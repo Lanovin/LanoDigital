@@ -16,17 +16,17 @@ export default async function SluzbyPage() {
 
   return (
     <div className="container-x pt-12 sm:pt-20">
-      <SectionHeading eyebrow={sluzby.eyebrow} title={sluzby.title} lead={sluzby.lead} />
+      <SectionHeading title={sluzby.title} lead={sluzby.lead} />
 
       <section id="balicky" className="scroll-mt-24 pt-16">
-        <SectionHeading eyebrow={sluzby.packagesEyebrow} title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
+        <SectionHeading title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
         <div className="mt-10">
           <Packages sluzby={sluzby} weby={weby} />
         </div>
       </section>
 
       <section className="pt-24 sm:pt-28">
-        <SectionHeading eyebrow={sluzby.extrasEyebrow} title={sluzby.extrasTitle} />
+        <SectionHeading title={sluzby.extrasTitle} />
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {sluzby.services.map((s, i) => (
             <Reveal key={s.name} delay={i * 0.08} as="article" className="card flex flex-col p-6 sm:p-7">
@@ -54,7 +54,7 @@ export default async function SluzbyPage() {
       </section>
 
       <section className="pt-24 sm:pt-28">
-        <SectionHeading eyebrow={sluzby.scopeEyebrow} title={sluzby.scopeTitle} lead={sluzby.scopeLead} />
+        <SectionHeading title={sluzby.scopeTitle} lead={sluzby.scopeLead} />
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <Reveal className="card p-6 sm:p-7">
             <h3 className="text-xl font-bold">{sluzby.scopeCanLabel}</h3>
@@ -80,7 +80,7 @@ export default async function SluzbyPage() {
       </section>
 
       <section className="pt-24 sm:pt-28">
-        <SectionHeading eyebrow={sluzby.processEyebrow} title={sluzby.processTitle} />
+        <SectionHeading title={sluzby.processTitle} />
         <ol className="mt-10 grid gap-4 md:grid-cols-5">
           {sluzby.process.map((p, i) => (
             <Reveal key={p.number} as="li" delay={i * 0.07} className="relative rounded-2xl border border-line bg-cream/60 p-5">
@@ -96,8 +96,7 @@ export default async function SluzbyPage() {
         <Reveal className="card-ink px-6 py-10 sm:px-12 sm:py-14">
           <div className="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
-              <p className="eyebrow !text-paper">{sluzby.principlesEyebrow}</p>
-              <h2 className="mt-3 text-3xl font-bold text-cream">
+              <h2 className="text-3xl font-bold text-cream">
                 <RichText text={sluzby.principlesTitle} />
               </h2>
             </div>

@@ -70,7 +70,7 @@ export default async function HomePage() {
 
       {/* ── HOTOVÉ WEBY ──────────────────────────────────────── */}
       <section id="weby" className="container-x scroll-mt-24 pt-20 sm:pt-28">
-        <SectionHeading eyebrow={home.webyEyebrow} title={home.webyTitle} lead={home.webyLead} />
+        <SectionHeading title={home.webyTitle} lead={home.webyLead} />
         <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
           {weby.map((w, i) => (
             <Reveal key={w.slug} delay={(i % 2) * 0.1}>
@@ -98,7 +98,7 @@ export default async function HomePage() {
 
       {/* ── JAK VZNIKÁ WEB ───────────────────────────────────── */}
       <section id="jak-vznika-web" className="container-x scroll-mt-24 pt-24 sm:pt-32">
-        <SectionHeading eyebrow={home.buildEyebrow} title={home.buildTitle} lead={home.buildLead} />
+        <SectionHeading title={home.buildTitle} lead={home.buildLead} />
         <Reveal className="mt-12">
           <WebBuilder steps={home.buildSteps} />
         </Reveal>
@@ -106,7 +106,7 @@ export default async function HomePage() {
 
       {/* ── BALÍČKY ──────────────────────────────────────────── */}
       <section id="balicky" className="container-x scroll-mt-24 pt-24 sm:pt-32">
-        <SectionHeading eyebrow={sluzby.packagesEyebrow} title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
+        <SectionHeading title={sluzby.packagesTitle} lead={sluzby.packagesLead} />
         <div className="mt-12">
           <Packages sluzby={sluzby} weby={weby} />
         </div>
@@ -115,7 +115,7 @@ export default async function HomePage() {
       {/* ── AI SYSTÉMY (menší sekce) ─────────────────────────── */}
       <section id="systemy" className="container-x scroll-mt-24 pt-24 sm:pt-32">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <SectionHeading eyebrow={home.systemsEyebrow} title={home.systemsTitle} lead={home.systemsLead} />
+          <SectionHeading title={home.systemsTitle} lead={home.systemsLead} />
           <Reveal delay={0.08} className="self-end">
             <ul className="border-t border-line-strong">
               {systems.map((s) => {
@@ -154,8 +154,7 @@ export default async function HomePage() {
         <Reveal className="card-ink px-6 py-10 sm:px-12 sm:py-14">
           <div className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-center">
             <div>
-              <p className="eyebrow !text-paper">{home.aboutEyebrow}</p>
-              <h2 className="mt-3 text-3xl font-bold text-cream sm:text-4xl">
+              <h2 className="text-3xl font-bold text-cream sm:text-4xl">
                 <RichText text={home.aboutTitle} />
               </h2>
               <p className="mt-4 max-w-xl leading-relaxed text-cream/75">{home.aboutText}</p>

@@ -15,7 +15,7 @@ export default async function WebyPage() {
 
   return (
     <div className="container-x pt-12 sm:pt-20">
-      <SectionHeading eyebrow={webyPage.eyebrow} title={webyPage.title} lead={webyPage.lead} />
+      <SectionHeading title={webyPage.title} lead={webyPage.lead} />
 
       <div className="mt-12 space-y-16">
         {weby.map((w, i) => (
@@ -47,7 +47,7 @@ export default async function WebyPage() {
       </div>
 
       <section className="pt-24">
-        <SectionHeading eyebrow={webyPage.howEyebrow} title={webyPage.howTitle} />
+        <SectionHeading title={webyPage.howTitle} />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {webyPage.how.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.07} className="card p-6">

@@ -94,23 +94,19 @@ export type Content = {
     heroPrimary: string;
     heroSecondary: string;
     marquee: string[];
-    webyEyebrow: string;
     webyTitle: string;
     webyLead: string;
     webyMore: string;
     webyDetailLabel: string;
     /** Interaktivní ukázka „jak vzniká web“: náčrt, struktura, vzhled, spuštění. */
-    buildEyebrow: string;
     buildTitle: string;
     buildLead: string;
     buildSteps: TitleText[];
     /** Menší sekce s AI systémy pod weby. */
-    systemsEyebrow: string;
     systemsTitle: string;
     systemsLead: string;
     systemsDetailLabel: string;
     systemsButton: string;
-    aboutEyebrow: string;
     aboutTitle: string;
     aboutText: string;
     aboutButton: string;
@@ -123,11 +119,9 @@ export type Content = {
   sluzby: {
     metaTitle: string;
     metaDescription: string;
-    eyebrow: string;
     title: string;
     lead: string;
     /** Balíčky webů. Ukazují se tady i na úvodní stránce. */
-    packagesEyebrow: string;
     packagesTitle: string;
     packagesLead: string;
     packages: WebPackage[];
@@ -135,7 +129,6 @@ export type Content = {
     packagesExampleLabel: string;
     packagesButton: string;
     /** Další služby kromě webů: AI systémy a konzultace. */
-    extrasEyebrow: string;
     extrasTitle: string;
     services: {
       icon: IconName;
@@ -147,17 +140,14 @@ export type Content = {
       cta: string;
     }[];
     /** Sekce „co jde a co ne“: co se automatizovat dá a co ne. */
-    scopeEyebrow: string;
     scopeTitle: string;
     scopeLead: string;
     scopeCanLabel: string;
     scopeCan: string[];
     scopeCannotLabel: string;
     scopeCannot: string[];
-    processEyebrow: string;
     processTitle: string;
     process: { number: string; title: string; text: string }[];
-    principlesEyebrow: string;
     principlesTitle: string;
     principles: { bold: string; text: string }[];
   };
@@ -165,12 +155,10 @@ export type Content = {
   systemyPage: {
     metaTitle: string;
     metaDescription: string;
-    eyebrow: string;
     title: string;
     lead: string;
     flowLabel: string;
     detailButton: string;
-    flowEyebrow: string;
     flowTitle: string;
     flowLead: string;
     flowCards: TitleText[];
@@ -182,9 +170,7 @@ export type Content = {
 
   systemDetail: {
     backLabel: string;
-    systemLabel: string;
     stepLabel: string;
-    demoEyebrow: string;
     demoTitle: string;
     demoLead: string;
     forWhomLabel: string;
@@ -192,7 +178,6 @@ export type Content = {
     limitsLabel: string;
     safetyLabel: string;
     insightsLabel: string;
-    ctaEyebrow: string;
     ctaTitle: string;
     ctaButton: string;
     nextPrefix: string;
@@ -203,10 +188,8 @@ export type Content = {
   webyPage: {
     metaTitle: string;
     metaDescription: string;
-    eyebrow: string;
     title: string;
     lead: string;
-    howEyebrow: string;
     howTitle: string;
     how: TitleText[];
     ctaButton: string;
@@ -218,16 +201,13 @@ export type Content = {
   about: {
     metaTitle: string;
     metaDescription: string;
-    eyebrow: string;
     title: string;
     lead: string;
     profileInitials: string;
     profileStats: { label: string; value: string }[];
     profileButton: string;
-    pathEyebrow: string;
     pathTitle: string;
     path: { period: string; title: string; text: string }[];
-    beliefsEyebrow: string;
     beliefsTitle: string;
     beliefs: TitleText[];
     ctaTitle: string;
@@ -238,7 +218,6 @@ export type Content = {
   kontakt: {
     metaTitle: string;
     metaDescription: string;
-    eyebrow: string;
     title: string;
     lead: string;
     info: { icon: IconName; title: string; text: string }[];

@@ -15,7 +15,7 @@ export default async function OMnePage() {
   return (
     <div className="container-x pt-12 sm:pt-20">
       <div className="grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-start">
-        <SectionHeading eyebrow={about.eyebrow} title={about.title} lead={about.lead} />
+        <SectionHeading title={about.title} lead={about.lead} />
 
         <Reveal delay={0.1} className="card-ink p-6 sm:p-8">
           <div className="flex size-24 items-center justify-center bg-paper font-display text-4xl font-extrabold text-ink">
@@ -40,7 +40,7 @@ export default async function OMnePage() {
       </div>
 
       <section className="pt-20">
-        <SectionHeading eyebrow={about.pathEyebrow} title={about.pathTitle} />
+        <SectionHeading title={about.pathTitle} />
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {about.path.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.07} className="card p-6">
@@ -53,7 +53,7 @@ export default async function OMnePage() {
       </section>
 
       <section className="pt-20">
-        <SectionHeading eyebrow={about.beliefsEyebrow} title={about.beliefsTitle} />
+        <SectionHeading title={about.beliefsTitle} />
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {about.beliefs.map((b, i) => (
             <Reveal key={b.title} delay={i * 0.06} className="rounded-2xl border border-line bg-cream/60 p-5">

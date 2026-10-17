@@ -24,7 +24,7 @@ export default async function KontaktPage() {
     <div className="container-x pt-12 sm:pt-20">
       <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start">
         <div className="lg:sticky lg:top-24">
-          <SectionHeading eyebrow={kontakt.eyebrow} title={kontakt.title} lead={kontakt.lead} />
+          <SectionHeading title={kontakt.title} lead={kontakt.lead} />
           <Reveal delay={0.1} className="mt-8 space-y-4">
             {kontakt.info.map((i) => {
               const text = fill(i.icon, i.text);

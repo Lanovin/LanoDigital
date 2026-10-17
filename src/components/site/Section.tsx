@@ -23,15 +23,13 @@ export function RichText({ text }: { text: string }) {
   );
 }
 
-/** Nadpis sekce se štítkem a volitelným podtitulem. */
+/** Nadpis sekce s volitelným podtitulem. */
 export function SectionHeading({
-  eyebrow,
   title,
   lead,
   align = "left",
   light = false,
 }: {
-  eyebrow?: string;
   title: ReactNode;
   lead?: ReactNode;
   align?: "left" | "center";
@@ -39,9 +37,8 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
-      {eyebrow && <p className={`eyebrow ${light ? "!text-paper" : ""}`}>{eyebrow}</p>}
       <h2
-        className={`mt-3 text-[2rem] font-bold leading-[1.05] sm:text-[2.6rem] md:text-[3rem] ${
+        className={`text-[2rem] font-bold leading-[1.05] sm:text-[2.6rem] md:text-[3rem] ${
           light ? "text-cream" : "text-ink"
         }`}
       >

@@ -24,7 +24,7 @@ export default async function SystemyPage() {
 
   return (
     <div className="container-x pt-12 sm:pt-20">
-      <SectionHeading eyebrow={systemyPage.eyebrow} title={systemyPage.title} lead={systemyPage.lead} />
+      <SectionHeading title={systemyPage.title} lead={systemyPage.lead} />
 
       <Reveal delay={0.1} className="mt-6">
         <MarbleRun className="mx-auto max-w-4xl" />
@@ -97,7 +97,7 @@ export default async function SystemyPage() {
       </div>
 
       <section id="jak-to-funguje" className="scroll-mt-24 pt-24 sm:pt-28">
-        <SectionHeading eyebrow={systemyPage.flowEyebrow} title={systemyPage.flowTitle} lead={systemyPage.flowLead} />
+        <SectionHeading title={systemyPage.flowTitle} lead={systemyPage.flowLead} />
         <Reveal className="card mt-10 px-4 py-10 sm:px-8 sm:py-12">
           <FlowDiagram />
         </Reveal>

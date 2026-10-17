@@ -52,7 +52,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<Par
       </Link>
 
       <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end">
-        <SectionHeading eyebrow={`${systemDetail.systemLabel} 0${idx + 1}`} title={s.name} lead={s.pitch} />
+        <SectionHeading title={s.name} lead={s.pitch} />
         {s.metricValue && (
           <Reveal className="card px-6 py-5">
             <span className="font-display text-4xl font-bold text-rust">{s.metricValue}</span>
@@ -92,7 +92,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<Par
       {/* ukázka */}
       {Demo && (
         <section className="pt-16">
-          <SectionHeading eyebrow={systemDetail.demoEyebrow} title={systemDetail.demoTitle} lead={systemDetail.demoLead} />
+          <SectionHeading title={systemDetail.demoTitle} lead={systemDetail.demoLead} />
           <Reveal className="mt-8">
             <Demo />
           </Reveal>
@@ -166,8 +166,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<Par
       <section className="pt-20">
         <Reveal className="card-ink flex flex-col items-start gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
           <div>
-            <p className="eyebrow !text-paper">{systemDetail.ctaEyebrow}</p>
-            <p className="mt-2 text-2xl font-bold text-cream">
+            <p className="text-2xl font-bold text-cream">
               <RichText text={systemDetail.ctaTitle} />
             </p>
           </div>
